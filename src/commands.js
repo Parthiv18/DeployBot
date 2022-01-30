@@ -4,6 +4,9 @@ module.exports = async function (msg) {
   if (msg.content.toUpperCase() === "Hello DeployBot".toUpperCase()) {
     msg.reply("Welcome Person w");
   }
+  if (msg.content.toUpperCase() === "Gay".toUpperCase()) {
+    msg.reply("Yes you are gay");
+  }
 
   //8ball
   const rep = [
