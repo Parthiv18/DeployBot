@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = async function (msg) {
   if (msg.content.toUpperCase() === "Hello DeployBot".toUpperCase()) {
-    msg.reply("Welcome");
+    msg.reply("Welcome Person");
   }
 
   //8ball
