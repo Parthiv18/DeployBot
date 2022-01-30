@@ -8,7 +8,7 @@ module.exports = async function (msg) {
   //8ball
   const rep = [
     "As I see it, yes!",
-    "Concentrate and ask again!",
+    "Ask again!",
     "It is decidedly so!",
     "Don't count on it!",
     "My sources say no",
