@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const TOKEN = process.env.TOKEN;
 const commandHandler = require("./commands");
+const task = require("./stocks");
 
 
 bot.login(TOKEN);
@@ -12,3 +13,5 @@ bot.on("ready", () => {
 });
 
 bot.on("message", commandHandler);
+
+
