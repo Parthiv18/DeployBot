@@ -8,7 +8,7 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
-  "author": "dbz",
+  "author": "dbzs",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.5.1",
