@@ -34,4 +34,6 @@ module.exports = {
       await browser.close();
     }
   },
+
+  findCrypto: async function (name) {},
 };
