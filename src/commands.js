@@ -22,12 +22,12 @@ module.exports = async function (msg) {
   }
 
   //stocks
-  if (msg.content.startsWith("-stocks")) {
+  if (msg.content.startsWith("-stocks") || msg.content.startsWith("-stock")) {
     var stockName = msg.content.split(" ");
     if (stockName.length === 2) {
       task.findStocks(stockName[1]).then((x) => msg.reply(x));
     } else {
-      msg.reply("Cannot Comprehend");      
+      msg.reply("Cannot Comprehend");
     }
   }
 };
