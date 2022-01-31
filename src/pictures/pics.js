@@ -1,4 +1,4 @@
-exports.DemonSlayer = [
+exports.DemonSlayerCharacters = [
   "https://i.pinimg.com/474x/0e/03/23/0e0323dcf9118ba5f596ff59558cd627.jpg",
   "https://i.pinimg.com/474x/ae/14/78/ae1478371c7105955cc703c31c1b04f7.jpg",
   "https://i.pinimg.com/474x/5e/e4/ef/5ee4ef2cbdf88b68cad68a3a17a8a947.jpg",
@@ -9,4 +9,4 @@ exports.DemonSlayer = [
   "https://i.pinimg.com/474x/45/e8/3d/45e83d5033b1fc291d1a45cc1b53b71b.jpg",
   "https://i.pinimg.com/474x/49/1d/01/491d01473a18014ffeaa1e749cec1319.jpg",
   "https://i.pinimg.com/474x/28/5e/6e/285e6e3c1053f9d9f945cb64483845ff.jpg"
-];
+]; //size 9

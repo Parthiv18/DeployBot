@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const task = require("./web");
-const demonSlayer = require("./pictures/pics");
+const anime = require("./pictures/pics");
 
 module.exports = async function (msg) {
   if (msg.content.toUpperCase() === "Hello DeployBot".toUpperCase()) {
@@ -9,10 +9,24 @@ module.exports = async function (msg) {
     msg.reply("Yes you are gay");
   }
 
-  //Who am I
-  if (msg.content.startsWith("-DemonSlayer")) {
-    var picPicker = Math.floor(Math.random() * (demonSlayer.DemonSlayer.length - 0 + 1)) + 0;
-    msg.channel.send("You Got: ", { files: [demonSlayer.DemonSlayer[picPicker]] }); 
+  //Who am I - DemonSlayer
+  if (msg.content.startsWith("-anime") || msg.content.startsWith("-Anime")) {
+    var animeName = msg.content.split(" ");
+    if (animeName.length === 2) {
+      //Demon Slayer as anime
+      if (animeName[1].toUpperCase() === "DemonSlayer".toUpperCase()) {
+        var picPicker = Math.floor(Math.random() * (9 - 0 + 1)) + 0;
+        msg.channel.send("You Got: ", {
+          files: [anime.DemonSlayerCharacters[picPicker]],
+        });
+      }
+      //no anime
+      else {
+        msg.reply("Cannot Comprehend Anime");
+      }
+    } else {
+      msg.reply("Cannot Comprehend Anime");
+    }
   }
 
   //stocks
