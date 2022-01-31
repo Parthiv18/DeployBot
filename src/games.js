@@ -25,7 +25,7 @@ module.exports = async function (msg) {
         msg.reply("You Got: ", {
           files: [anime.DemonSlayerCharacters[picPicker]],
         });
-      } 
+      }
       //Anime [Naruto]
       else if (animeName[1].toUpperCase() === "naruto".toUpperCase()) {
         var picPicker = Math.floor(Math.random() * (17 - 0 + 1)) + 0;

@@ -8,6 +8,13 @@ module.exports = async function (msg) {
     msg.reply("Yes you are gay");
   }
 
+  //delete messages
+  /*if (msg.content.includes("YAY")) {
+    let input = msg.content.split(" ").slice(1).join(" "); // Removes the prefix
+    msg.delete(); // Deletes the message
+    //msg.channel.send(input); //.then(msg=>msg.delete({timeout:"5000"}) <- if you want delete it with delay and sends the finished text
+  }*/
+
   //stocks
   if (msg.content.startsWith("-stocks") || msg.content.startsWith("-stock")) {
     var stockName = msg.content.split(" ");
