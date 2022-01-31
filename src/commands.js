@@ -11,6 +11,12 @@ module.exports = async function (msg) {
     msg.reply("Yes you are gay");
   }
 
+  if (msg.content.toUpperCase() === "-help".toUpperCase()) {
+    msg.channel.send(
+      '**Anime games:**\nType "-anime" followed by the anime name with no spaces to find out your anime character!\n**Crypto:**\nType "-crypto" followed by the name of the currency to see the value of the crypto.\n**Stocks:**\nType "-stocks" followed by the name of the company to see the value of the stock\n'
+    );
+  }
+
   //delete messages
   /*if (msg.content.includes("YAY")) {
     let input = msg.content.split(" ").slice(1).join(" "); // Removes the prefix
