@@ -8,5 +8,6 @@ exports.DemonSlayerCharacters = [
   "https://i.pinimg.com/474x/ed/29/ca/ed29ca8fc04bc24ff74ad94eddf52a71.jpg",
   "https://i.pinimg.com/474x/45/e8/3d/45e83d5033b1fc291d1a45cc1b53b71b.jpg",
   "https://i.pinimg.com/474x/49/1d/01/491d01473a18014ffeaa1e749cec1319.jpg",
-  "https://i.pinimg.com/474x/28/5e/6e/285e6e3c1053f9d9f945cb64483845ff.jpg"
-]; //size 9
+  "https://i.pinimg.com/474x/28/5e/6e/285e6e3c1053f9d9f945cb64483845ff.jpg",
+  "https://i.pinimg.com/474x/8b/78/a1/8b78a1be93f89fefc8eb4521749e8350.jpg"
+]; //size 10
