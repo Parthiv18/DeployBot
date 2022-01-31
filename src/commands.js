@@ -29,6 +29,14 @@ module.exports = async function (msg) {
   }
 
   //Crypto
+  if (msg.content.startsWith("-crypto") || msg.content.startsWith("-Crypto")) {
+    var cryptoName = msg.content.split(" ");
+    if (cryptoName.length === 2) {
+      task.findCrypto(cryptoName[1]).then((x) => msg.reply(x));
+    } else {
+      msg.reply("Cannot Comprehend");
+    }
+  }
 
   //IG
   if (msg.content.startsWith("-ig")) {
