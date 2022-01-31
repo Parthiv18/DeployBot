@@ -19,8 +19,9 @@ module.exports = async function (msg) {
   }
 
   //Crypto
+
   //IG
-  if (msg.content.startsWith("-IG")) {
+  if (msg.content.startsWith("-ig")) {
     var igName = msg.content.split(" ");
     if (igName.length === 2) {
       task.findIG(igName[1]).then((x) => msg.reply(x));

@@ -55,9 +55,7 @@ module.exports = {
       const [getName] = await page.$x(
         "/html/body/div[1]/section/main/div/header/section/div[2]/h1"
       );
-      // const [getPic] = await page.$x(
-      //   "/html/body/div[1]/section/main/div/header/div/div/span/img"
-      // );
+
       const igStoreName = await igGetName.getProperty("textContent");
       const igRawName = await igStoreName.jsonValue();
 
