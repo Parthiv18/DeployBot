@@ -21,7 +21,7 @@ module.exports = async function (msg) {
     if (animeName.length === 2) {
       //Demon Slayer as anime
       if (animeName[1].toUpperCase() === "DemonSlayer".toUpperCase()) {
-        var picPicker = Math.floor(Math.random() * (10 - 0 + 1)) + 0;
+        var picPicker = Math.floor(Math.random() * (11 - 0 + 1)) + 0;
         msg.reply("You Got: ", {
           files: [anime.DemonSlayerCharacters[picPicker]],
         });

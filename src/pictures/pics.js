@@ -10,7 +10,8 @@ exports.DemonSlayerCharacters = [
   "https://i.pinimg.com/474x/49/1d/01/491d01473a18014ffeaa1e749cec1319.jpg",
   "https://i.pinimg.com/474x/28/5e/6e/285e6e3c1053f9d9f945cb64483845ff.jpg",
   "https://i.pinimg.com/474x/8b/78/a1/8b78a1be93f89fefc8eb4521749e8350.jpg",
-]; //size 10
+  "https://i.pinimg.com/474x/65/cb/53/65cb53b78f7f36088032598fd4a5f10a.jpg"
+]; //size 11
 
 exports.NarutoCharacters = [
   "https://i.pinimg.com/474x/48/d8/39/48d83952759e421f15aaae74ef307ef9.jpg",
@@ -29,5 +30,5 @@ exports.NarutoCharacters = [
   "https://i.pinimg.com/474x/b7/5e/49/b75e49d33971727b9d295f8f6ae86b92.jpg",
   "https://i.pinimg.com/474x/6b/70/53/6b70538d10bb8782308ca52b1919ac00.jpg",
   "https://i.pinimg.com/474x/48/13/e5/4813e5872edfa95a03909a21c0b9efce.jpg",
-  "https://i.pinimg.com/474x/ad/35/81/ad3581384b9dcbd65639f107e95fa1cc.jpg",
+  "https://i.pinimg.com/474x/ad/35/81/ad3581384b9dcbd65639f107e95fa1cc.jpg"
 ]; //size 17
