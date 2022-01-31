@@ -31,7 +31,7 @@ exports.NarutoCharacters = [
   "https://i.pinimg.com/474x/6b/70/53/6b70538d10bb8782308ca52b1919ac00.jpg",
   "https://i.pinimg.com/474x/48/13/e5/4813e5872edfa95a03909a21c0b9efce.jpg",
   "https://i.pinimg.com/474x/ad/35/81/ad3581384b9dcbd65639f107e95fa1cc.jpg",
-]; //size 17
+]; //size 16
 
 exports.AOTCharacters = [
   "https://i.pinimg.com/564x/2f/c9/d1/2fc9d136bef6d5d2979c0a892bd68c5b.jpg",
