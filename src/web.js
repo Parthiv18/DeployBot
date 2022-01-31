@@ -38,7 +38,32 @@ module.exports = {
 
   //Crypto
   findCrypto: async function (name) {
-    
+    const browser = await puppeteer.launch();
+    try {
+      const page = await browser.newPage();
+      await page.goto("https://coinmarketcap.com/currencies/" + name + "/", {
+        timeout: 0,
+        waitUntil: "networkidle0",
+      });
+
+      const [getCryptoValue] = await page.$x(
+        '//*[@id="__next"]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span'
+      );
+      const [getCryptoToday] = await page.$x(
+        '//*[@id="__next"]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/span'
+      );
+      const storeCryptoValue = await getCryptoValue.getProperty("textContent");
+      const cryptoValue = await storeCryptoValue.jsonValue();
+
+      const storeCryptoToday = await getCryptoToday.getProperty("textContent");
+      const cryptoToday = await storeCryptoToday.jsonValue();
+
+      return "\nCurrent Price: " + cryptoValue + " USD\nToday: " + cryptoToday;
+    } catch (err) {
+      console.error(err.message);
+    } finally {
+      await browser.close();
+    }
   },
 
   //IG
@@ -52,18 +77,22 @@ module.exports = {
       });
 
       const [igGetName] = await page.$x(
-        "/html/body/div[1]/section/main/div/header/section/div[1]/h2"
+        '/html/body/div[1]/section/main/div/header/section/div[1]/h2'
       );
       const [getName] = await page.$x(
-        "/html/body/div[1]/section/main/div/header/section/div[2]/h1"
+        '/html/body/div[1]/section/main/div/header/section/div[2]/h1'
       );
-
+      const [igGetPic] = await page.$x(
+        '//*[@id="react-root"]/section/main/div/header/div/div/div/button/img'
+      );
       const igStoreName = await igGetName.getProperty("textContent");
       const igRawName = await igStoreName.jsonValue();
 
       const storeName = await getName.getProperty("textContent");
       const rawName = await storeName.jsonValue();
 
+      const igStorePic = await igGetPic.getProperty("src");
+      const igRawPic = await igStorePic.jsonValue();
       return "\nUser Name: @" + igRawName + "\nName: " + rawName;
     } catch (err) {
       console.error(err.message);
