@@ -19,13 +19,15 @@ module.exports = async function (msg) {
   if (msg.content.startsWith("-anime") || msg.content.startsWith("-Anime")) {
     var animeName = msg.content.split(" ");
     if (animeName.length === 2) {
-      //Demon Slayer as anime
+      //Anime [Demon Slayer]
       if (animeName[1].toUpperCase() === "DemonSlayer".toUpperCase()) {
         var picPicker = Math.floor(Math.random() * (11 - 0 + 1)) + 0;
         msg.reply("You Got: ", {
           files: [anime.DemonSlayerCharacters[picPicker]],
         });
-      } else if (animeName[1].toUpperCase() === "naruto".toUpperCase()) {
+      } 
+      //Anime [Naruto]
+      else if (animeName[1].toUpperCase() === "naruto".toUpperCase()) {
         var picPicker = Math.floor(Math.random() * (17 - 0 + 1)) + 0;
         msg.reply("You Got: ", {
           files: [anime.NarutoCharacters[picPicker]],
