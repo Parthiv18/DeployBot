@@ -3,7 +3,10 @@ const task = require("./web");
 
 module.exports = async function (msg) {
   if (msg.content.toUpperCase() === "Hello DeployBot".toUpperCase()) {
-    msg.react("😄");
+    //msg.react("😄");
+    msg.channel.send("Welcome", {
+      tts: true,
+    });
   } else if (msg.content.toUpperCase() === "Gay".toUpperCase()) {
     msg.reply("Yes you are gay");
   }

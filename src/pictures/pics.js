@@ -10,7 +10,7 @@ exports.DemonSlayerCharacters = [
   "https://i.pinimg.com/474x/49/1d/01/491d01473a18014ffeaa1e749cec1319.jpg",
   "https://i.pinimg.com/474x/28/5e/6e/285e6e3c1053f9d9f945cb64483845ff.jpg",
   "https://i.pinimg.com/474x/8b/78/a1/8b78a1be93f89fefc8eb4521749e8350.jpg",
-  "https://i.pinimg.com/474x/65/cb/53/65cb53b78f7f36088032598fd4a5f10a.jpg"
+  "https://i.pinimg.com/474x/65/cb/53/65cb53b78f7f36088032598fd4a5f10a.jpg",
 ]; //size 11
 
 exports.NarutoCharacters = [
@@ -30,5 +30,29 @@ exports.NarutoCharacters = [
   "https://i.pinimg.com/474x/b7/5e/49/b75e49d33971727b9d295f8f6ae86b92.jpg",
   "https://i.pinimg.com/474x/6b/70/53/6b70538d10bb8782308ca52b1919ac00.jpg",
   "https://i.pinimg.com/474x/48/13/e5/4813e5872edfa95a03909a21c0b9efce.jpg",
-  "https://i.pinimg.com/474x/ad/35/81/ad3581384b9dcbd65639f107e95fa1cc.jpg"
+  "https://i.pinimg.com/474x/ad/35/81/ad3581384b9dcbd65639f107e95fa1cc.jpg",
 ]; //size 17
+
+exports.AOTCharacters = [
+  "https://i.pinimg.com/564x/2f/c9/d1/2fc9d136bef6d5d2979c0a892bd68c5b.jpg",
+  "https://i.pinimg.com/564x/9f/87/7c/9f877c2062221ea223eb7c69d7d1bda5.jpg",
+  "https://i.pinimg.com/originals/8e/84/39/8e8439ff7029ab4174e2a6fcbad81df0.png",
+  "https://i.pinimg.com/564x/c2/d4/56/c2d4563419e5ef329177a455c807ae87.jpg",
+  "https://i.pinimg.com/564x/3a/3e/8c/3a3e8cbbc00cb64375a175e81f7572eb.jpg",
+  "https://i.pinimg.com/564x/fd/31/96/fd3196b35eb0cc832b96d1623b893d20.jpg",
+  "https://i.pinimg.com/564x/34/ff/f0/34fff098d1f0c39555dd2aca495f51ce.jpg",
+  "https://i.pinimg.com/564x/96/0e/0c/960e0c65784005f25a00f19fbaef9568.jpg",
+  "https://i.pinimg.com/564x/97/99/a5/9799a5594cb9e1c91b412e33617e3600.jpg",
+  "https://i.pinimg.com/564x/cf/1a/c9/cf1ac94fef85ab8423f423225bc33697.jpg",
+  "https://i.pinimg.com/564x/61/0a/6d/610a6d7aa3a983861f260233090b4b97.jpg",
+  "https://i.pinimg.com/564x/2e/13/3b/2e133b0c13a1f67ee7c22897eeeeb5c5.jpg",
+  "https://i.pinimg.com/564x/ad/28/ac/ad28ac62e28ff122ec1b9e4efc7b4d84.jpg",
+  "https://i.pinimg.com/564x/e6/1c/94/e61c94defe98f5669a71b9dd2b18010f.jpg",
+  "https://i.pinimg.com/564x/f4/98/2d/f4982daa332d7f46b1b68dc8cc5f2101.jpg",
+  "https://i.pinimg.com/564x/19/98/1e/19981e82945fe89bfec4710584881899.jpg",
+  "https://i.pinimg.com/564x/ef/d5/34/efd53486a1f88e3f2316cc1171b0851c.jpg",
+  "https://i.pinimg.com/564x/6e/d2/7c/6ed27c6333f8258b17c30e043df8f98e.jpg",
+  "https://i.pinimg.com/564x/d9/c6/b0/d9c6b08391d2b2f610fec42875228484.jpg",
+  "https://i.pinimg.com/564x/7a/6d/b6/7a6db6a43b68cfd6290a5261aa852852.jpg",
+  "https://i.pinimg.com/564x/23/69/53/236953a46f6786e9ad9658fcffd159e5.jpg",
+]; //size 21

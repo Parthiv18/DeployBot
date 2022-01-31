@@ -33,6 +33,20 @@ module.exports = async function (msg) {
           files: [anime.NarutoCharacters[picPicker]],
         });
       }
+      //Anime AOT
+      else if (animeName[1].toUpperCase() === "attackontitan".toUpperCase()) {
+        var picPicker = Math.floor(Math.random() * (21 - 0 + 1)) + 0;
+        msg.reply("You Got: ", {
+          files: [anime.AOTCharacters[picPicker]],
+        });
+      }
+      //Anime AOT (alternate name)
+      else if (animeName[1].toUpperCase() === "aot".toUpperCase()) {
+        var picPicker = Math.floor(Math.random() * (21 - 0 + 1)) + 0;
+        msg.reply("You Got: ", {
+          files: [anime.AOTCharacters[picPicker]],
+        });
+      }
       //no anime
       else {
         msg.reply("Cannot Comprehend Anime");

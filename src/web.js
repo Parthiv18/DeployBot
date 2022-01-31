@@ -37,7 +37,9 @@ module.exports = {
   },
 
   //Crypto
-  findCrypto: async function (name) {},
+  findCrypto: async function (name) {
+    
+  },
 
   //IG
   findIG: async function (igName) {
