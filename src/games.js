@@ -9,7 +9,7 @@ module.exports = async function (msg) {
     "Don't count on it!",
     "My sources say no",
   ];
-  var num = Math.floor(Math.random() * (4 - 0 + 1)) + 0;
+  var num = Math.floor(Math.random() * ((rep.length) - 0 + 1)) + 0;
   if (msg.content.startsWith("-8ball")) {
     msg.reply(rep[num]);
   }

@@ -1,11 +1,18 @@
 const Discord = require("discord.js");
 const task = require("./web");
+const demonSlayer = require("./pictures/pics");
 
 module.exports = async function (msg) {
   if (msg.content.toUpperCase() === "Hello DeployBot".toUpperCase()) {
     msg.reply("Welcome Person w");
   } else if (msg.content.toUpperCase() === "Gay".toUpperCase()) {
     msg.reply("Yes you are gay");
+  }
+
+  //Who am I
+  if (msg.content.startsWith("-DemonSlayer")) {
+    var picPicker = Math.floor(Math.random() * (demonSlayer.DemonSlayer.length - 0 + 1)) + 0;
+    msg.channel.send("You Got: ", { files: [demonSlayer.DemonSlayer[picPicker]] }); 
   }
 
   //stocks
