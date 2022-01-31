@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const task = require("./stocks");
+const task = require("./web");
 
 module.exports = async function (msg) {
   if (msg.content.toUpperCase() === "Hello DeployBot".toUpperCase()) {
@@ -15,6 +15,17 @@ module.exports = async function (msg) {
       task.findStocks(stockName[1]).then((x) => msg.reply(x));
     } else {
       msg.reply("Cannot Comprehend");
+    }
+  }
+
+  //Crypto
+  //IG
+  if (msg.content.startsWith("-IG")) {
+    var igName = msg.content.split(" ");
+    if (igName.length === 2) {
+      task.findIG(igName[1]).then((x) => msg.reply(x));
+    } else {
+      msg.reply("Cannot Find Such User");
     }
   }
 };

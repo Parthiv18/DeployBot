@@ -13,4 +13,7 @@ module.exports = async function (msg) {
   if (msg.content.startsWith("-8ball")) {
     msg.reply(rep[num]);
   }
+
+  //1v1
+  
 };
