@@ -5,7 +5,7 @@ const components = require("./helper/msgHelper");
 module.exports = async function (msg) {
   if (msg.content.toUpperCase() === "Hello DeployBot".toUpperCase()) {
     //msg.react("😄");
-    msg.channel.send("Welcome to", {
+    msg.channel.send("Welcome to Server", {
       tts: true,
     });
   } else if (msg.content.toUpperCase() === "Gay".toUpperCase()) {
