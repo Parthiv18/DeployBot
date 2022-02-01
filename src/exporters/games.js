@@ -10,7 +10,7 @@ module.exports = async function (msg) {
     msg.reply(components.ballReplies[num]);
   }
 
-  //Who am I Game - Anime
+  //Who am I - Anime
   if (msg.content.startsWith("-anime") || msg.content.startsWith("-Anime")) {
     var animeName = msg.content.split(" ");
     if (animeName.length === 2) {
