@@ -11,7 +11,7 @@ module.exports = async function (msg) {
     var ball = msg.content.split(" ");
     if (ball.length > 1) {
       msg.reply(components.ballReplies[num]);
-    } else if (ball.length === 1) {
+    } else if (ball.length <= 1) {
       msg.reply("Yes or no question");
     }
   }
