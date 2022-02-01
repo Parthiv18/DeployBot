@@ -53,6 +53,7 @@ module.exports = async function (msg) {
       task.findCrypto(cryptoName[1]).then((x) => msg.reply(x));
     } else {
       msg.reply("Cannot Comprehend");
+      task.findCrypto.catch((err) => err).then((x) => msg.reply(x));
     }
   }
 
