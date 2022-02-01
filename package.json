@@ -11,6 +11,7 @@
   "author": "dbzs",
   "license": "ISC",
   "dependencies": {
+    "@discordjs/opus": "^0.7.0",
     "discord-reply": "^0.1.2",
     "discord.js": "^11.5.1",
     "dotenv": "^8.2.0",
