@@ -17,6 +17,13 @@ module.exports = async function (msg) {
     );
   }
 
+ /* Avatar
+  if (msg.content.toUpperCase() === "-av".toUpperCase()) {
+    const UserPFP = msg.member.avatarURL();
+        msg.reply(UserPFP);
+  }
+  */
+
   //delete messages
   /*if (msg.content.includes("YAY")) {
     let input = msg.content.split(" ").slice(1).join(" "); // Removes the prefix
