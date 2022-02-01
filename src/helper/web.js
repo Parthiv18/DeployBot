@@ -29,6 +29,7 @@ module.exports = {
       return "\nCurrent Stock Value: $" + stockValue + "\nToday: " + stockToday;
     } catch (err) {
       console.error(err.message);
+      return "Stocks are in progress!";
     } finally {
       await browser.close();
     }
@@ -62,6 +63,7 @@ module.exports = {
       return "\nCurrent Price: " + cryptoValue + " USD\nToday: " + cryptoToday;
     } catch (err) {
       console.error(err.message);
+      return "Sorry we couldn't find that coin!"
     } finally {
       await browser.close();
     }
