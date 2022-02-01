@@ -3,11 +3,23 @@ const anime = require("../helper/pics");
 const components = require("../helper/msgHelper");
 
 module.exports = async function (msg) {
-  //8ball
-  var num =
+  //Old 8ball
+  /*var num =
     Math.floor(Math.random() * (components.ballReplies.length - 0 + 1)) + 0;
   if (msg.content.startsWith("-8ball")) {
     msg.reply(components.ballReplies[num]);
+  }*/
+
+  //New 8ball
+  var num =
+  Math.floor(Math.random() * (components.ballReplies.length - 0 + 1)) + 0;
+  if (msg.content.startsWith("-8ball")) {
+    var ball = msg.content.split(" ");
+    if (ball.length > 1) {
+      msg.reply(components.ballReplies[num]);
+    } else if (ball.length <= 1){
+      msg.reply("-8ball \"Yes or no question\"");
+    }
   }
 
   //Who am I - Anime
