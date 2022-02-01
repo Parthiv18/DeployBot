@@ -8,7 +8,7 @@ exports.ballReplies = [
 ];
 var helpMsg =
   "**Anime games:**\n" +
-  'Type "-anime" followed by the anime name with no spaces to find out your anime character!\n' +
+  'Type "-anime" followed by the anime name with no spaces to find out your anime character! [For now we have DemonSlayer, Naruto, AOT]\n' +
   "**Crypto:**\n" +
   'Type "-crypto" followed by the name of the currency to see the value of the crypto.\n' +
   "**Stocks:**\n" +
