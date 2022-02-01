@@ -61,7 +61,7 @@ typings/
 .next
 
 #Package.Json
-#package.json
+package.json
 
 #Package-lock.Json
-#package-lock.json
+package-lock.json

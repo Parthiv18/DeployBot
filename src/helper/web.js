@@ -9,16 +9,16 @@ module.exports = {
     });
     try {
       const page = await browser.newPage();
-      await page.goto("https://www.google.com/search?q=" + name + "+stocks", {
+      await page.goto("https://www.tradingview.com/symbols/" + name + "/", {
         timeout: 0,
         waitUntil: "networkidle0",
       });
 
       const [getStockValue] = await page.$x(
-        "/html/body/div[7]/div/div[10]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div/div/div/g-card-section/div/g-card-section/div[2]/div[1]/span[1]/span/span[1]"
+        "/html/body/div[2]/div[4]/div[3]/header/div/div[3]/div[1]/div/div/div/div[1]/div[1]/span"
       );
       const [getStockToday] = await page.$x(
-        "/html/body/div[7]/div/div[10]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div/div/div/g-card-section/div/g-card-section/div[2]/div[1]/span[2]/span[1]"
+        "/html/body/div[2]/div[4]/div[3]/header/div/div[3]/div[1]/div/div/div/div[1]/div[3]/span[1]"
       );
       const storeStockValue = await getStockValue.getProperty("textContent");
       const stockValue = await storeStockValue.jsonValue();
@@ -26,7 +26,9 @@ module.exports = {
       const storeStockToday = await getStockToday.getProperty("textContent");
       const stockToday = await storeStockToday.jsonValue();
 
-      return "\nCurrent Stock Value: $" + stockValue + "\nToday: " + stockToday;
+      return (
+        "\nCurrent Stock Value: $" + stockValue + " USD\nToday: " + stockToday
+      );
     } catch (err) {
       console.error(err.message);
     } finally {
