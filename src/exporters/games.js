@@ -4,7 +4,8 @@ const components = require("../helper/msgHelper");
 
 module.exports = async function (msg) {
   //8ball
-  var num = Math.floor(Math.random() * (components.ballReplies.length - 0 + 1)) + 0;
+  var num =
+    Math.floor(Math.random() * (components.ballReplies.length - 0 + 1)) + 0;
   if (msg.content.startsWith("-8ball")) {
     msg.reply(components.ballReplies[num]);
   }
