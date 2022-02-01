@@ -10,7 +10,7 @@ module.exports = {
     try {
       const page = await browser.newPage();
       await page.goto(
-        "https://www.google.com/search?client=firefox-b-d&q=" +
+        "https://www.google.com/search?q=" +
           name +
           "+stocks",
         {
