@@ -59,12 +59,14 @@ module.exports = async function (msg) {
         }
       }
       //Anime [Akame Ga Kill]
-      else if (animeName[1].toUpperCase() === "akame".toUpperCase()) {
+      else if (animeName[1].toUpperCase() === "akamegakill".toUpperCase()) {
         try {
           var picPicker =
             Math.floor(Math.random() * (anime.AOTCharacters.length - 0 + 1)) +
             0;
-          msg.reply({ files: [{ attachment: anime.AkameGaKill[picPicker] }] });
+          msg.reply("You Got: ", {
+            files: [{ attachment: anime.AkameGaKill[picPicker] }],
+          });
         } catch (err) {
           console.log(err);
           msg.reply("Going too fast! Retry");
@@ -72,10 +74,14 @@ module.exports = async function (msg) {
       }
       //no anime
       else {
-        msg.reply("Cannot Comprehend Anime! [Try without spaces], [Adding that anime soon!]");
+        msg.reply(
+          "Cannot Comprehend Anime! [Try without spaces], [Adding that anime soon!]"
+        );
       }
     } else {
-      msg.reply("Cannot Comprehend Anime! [Try without spaces], [Adding that anime soon!]");
+      msg.reply(
+        "Cannot Comprehend Anime! [Try without spaces], [Adding that anime soon!]"
+      );
     }
   }
 
