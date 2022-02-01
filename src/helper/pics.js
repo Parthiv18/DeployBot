@@ -92,3 +92,17 @@ exports.AOTCharacters = [
   "https://i.pinimg.com/564x/23/69/53/236953a46f6786e9ad9658fcffd159e5.jpg",
   "https://i.pinimg.com/564x/e7/79/21/e779218c690eb392da1441789b4ce9fd.jpg",
 ]; //size 21
+
+exports.AkameGaKill = [
+  "https://i.pinimg.com/474x/5a/16/31/5a1631ad69f15a2696cd0eb6564e1789.jpg",
+  "https://i.pinimg.com/474x/4c/95/36/4c9536e08e05c771f28bcc5db9938da6.jpg",
+  "https://i.pinimg.com/474x/6a/74/d9/6a74d99c80433fcfcb5716126514ff36.jpg",
+  "https://i.pinimg.com/474x/9d/7e/b7/9d7eb7cf9aea4a8849d5997bfa0057b0.jpg",
+  "https://i.pinimg.com/474x/71/09/d2/7109d2476fc7a459756e7da6f9837cc2.jpg",
+  "https://i.pinimg.com/474x/7e/60/a0/7e60a07b13cbb4e28378514e950bc0d9.jpg",
+  "https://i.pinimg.com/474x/56/73/e2/5673e218cd1771688b0056b453ee5866.jpg",
+  "https://i.pinimg.com/474x/24/75/0a/24750aa3365d0dc9abacbfd25c2cdb20.jpg",
+  "https://i.pinimg.com/564x/fe/cb/c6/fecbc6f9ff911f76927abedadd6c7cbc.jpg",
+  "https://i.pinimg.com/474x/fe/84/73/fe84735a2f4333f5698d5398a69817dc.jpg",
+  "https://i.pinimg.com/474x/06/cb/8b/06cb8b22d4de97364cc8f8cc95961908.jpg",
+];

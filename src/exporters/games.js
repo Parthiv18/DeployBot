@@ -22,7 +22,7 @@ module.exports = async function (msg) {
               Math.random() * (anime.DemonSlayerCharacters.length - 0 + 1)
             ) + 0;
           msg.reply("You Got: ", {
-            files: [anime.DemonSlayerCharacters[picPicker]],
+            files: [{ attachment: anime.DemonSlayerCharacters[picPicker] }],
           });
         } catch (err) {
           msg.reply("Going too fast! Retry");
@@ -36,7 +36,7 @@ module.exports = async function (msg) {
               Math.random() * (anime.NarutoCharacters.length - 0 + 1)
             ) + 0;
           msg.reply("You Got: ", {
-            files: [anime.NarutoCharacters[picPicker]],
+            files: [{ attachment: anime.NarutoCharacters[picPicker] }],
           });
         } catch (err) {
           msg.reply("Going too fast! Retry");
@@ -52,18 +52,30 @@ module.exports = async function (msg) {
             Math.floor(Math.random() * (anime.AOTCharacters.length - 0 + 1)) +
             0;
           msg.reply("You Got: ", {
-            files: [anime.AOTCharacters[picPicker]],
+            files: [{ attachment: anime.AOTCharacters[picPicker] }],
           });
         } catch (err) {
           msg.reply("Going too fast! Retry");
         }
       }
+      //Anime [Akame Ga Kill]
+      else if (animeName[1].toUpperCase() === "akame".toUpperCase()) {
+        try {
+          var picPicker =
+            Math.floor(Math.random() * (anime.AOTCharacters.length - 0 + 1)) +
+            0;
+          msg.reply({ files: [{ attachment: anime.AkameGaKill[picPicker] }] });
+        } catch (err) {
+          console.log(err);
+          msg.reply("Going too fast! Retry");
+        }
+      }
       //no anime
       else {
-        msg.reply("Cannot Comprehend Anime");
+        msg.reply("Cannot Comprehend Anime! [Try without spaces], [Adding that anime soon!]");
       }
     } else {
-      msg.reply("Cannot Comprehend Anime");
+      msg.reply("Cannot Comprehend Anime! [Try without spaces], [Adding that anime soon!]");
     }
   }
 
