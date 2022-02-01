@@ -13,11 +13,18 @@ module.exports = async function (msg) {
 
   if (msg.content.toUpperCase() === "-help".toUpperCase()) {
     msg.channel.send(
-      '**Anime games:**\nType "-anime" followed by the anime name with no spaces to find out your anime character!\n**Crypto:**\nType "-crypto" followed by the name of the currency to see the value of the crypto.\n**Stocks:**\nType "-stocks" followed by the name of the company to see the value of the stock\n'
+      "**Anime games:**\n" +
+        'Type "-anime" followed by the anime name with no spaces to find out your anime character!\n' +
+        "**Crypto:**\n" +
+        'Type "-crypto" followed by the name of the currency to see the value of the crypto.\n' +
+        "**Stocks:**\n" +
+        'Type "-stocks" followed by the name of the company to see the value of the stock\n' +
+        "**8ball:**\n" +
+        'Type "-8ball" to play a game of 8ball\n'
     );
   }
 
- /* Avatar
+  /* Avatar
   if (msg.content.toUpperCase() === "-av".toUpperCase()) {
     const UserPFP = msg.member.avatarURL();
         msg.reply(UserPFP);
