@@ -3,7 +3,10 @@ const puppeteer = require("puppeteer");
 module.exports = {
   //Stocks
   findStocks: async function (name) {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      headless:true,
+      args:["--no-sandbox"]
+    });
     try {
       const page = await browser.newPage();
       await page.goto(
@@ -38,7 +41,10 @@ module.exports = {
 
   //Crypto Method
   findCrypto: async function (name) {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      headless:true,
+      args:["--no-sandbox"]
+    });
     try {
       const page = await browser.newPage();
       await page.goto("https://coinmarketcap.com/currencies/" + name + "/", {
@@ -68,7 +74,10 @@ module.exports = {
 
   //IG
   findIG: async function (igName) {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      headless:true,
+      args:["--no-sandbox"]
+    });
     try {
       const page = await browser.newPage();
       await page.goto("https://www.instagram.com/" + igName + "/", {
@@ -77,10 +86,10 @@ module.exports = {
       });
 
       const [igGetName] = await page.$x(
-        '/html/body/div[1]/section/main/div/header/section/div[1]/h2'
+        "/html/body/div[1]/section/main/div/header/section/div[1]/h2"
       );
       const [getName] = await page.$x(
-        '/html/body/div[1]/section/main/div/header/section/div[2]/h1'
+        "/html/body/div[1]/section/main/div/header/section/div[2]/h1"
       );
       const [igGetPic] = await page.$x(
         '//*[@id="react-root"]/section/main/div/header/div/div/div/button/img'
