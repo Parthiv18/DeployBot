@@ -1,18 +1,12 @@
 const Discord = require("discord.js");
 const anime = require("./helper/pics");
+const components = require("./helper/msgHelper");
 
 module.exports = async function (msg) {
   //8ball
-  const rep = [
-    "As I see it, yes!",
-    "Concentrate and ask again!",
-    "It is decidedly so!",
-    "Don't count on it!",
-    "My sources say no",
-  ];
-  var num = Math.floor(Math.random() * (rep.length - 0 + 1)) + 0;
+  var num = Math.floor(Math.random() * (components.ballReplies.length - 0 + 1)) + 0;
   if (msg.content.startsWith("-8ball")) {
-    msg.reply(rep[num]);
+    msg.reply(components.ballReplies[num]);
   }
 
   //Who am I Game - Anime
