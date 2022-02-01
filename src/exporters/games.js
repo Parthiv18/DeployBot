@@ -59,11 +59,13 @@ module.exports = async function (msg) {
         }
       }
       //Anime [Akame Ga Kill]
-      else if (animeName[1].toUpperCase() === "akamegakill".toUpperCase()) {
+      else if (
+        animeName[1].toUpperCase() === "akame".toUpperCase() ||
+        animeName[1].toUpperCase() === "akamegakill".toUpperCase()
+      ) {
         try {
           var picPicker =
-            Math.floor(Math.random() * (anime.AOTCharacters.length - 0 + 1)) +
-            0;
+            Math.floor(Math.random() * (anime.AkameGaKill.length - 0 + 1)) + 0;
           msg.reply("You Got: ", {
             files: [{ attachment: anime.AkameGaKill[picPicker] }],
           });
