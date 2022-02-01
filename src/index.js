@@ -4,8 +4,8 @@ const bot = new Discord.Client();
 require("dotenv").config();
 const TOKEN = process.env.TOKEN;
 
-const commandHandler = require("./commands");
-const gameHandler = require("./games");
+const commandHandler = require("./exporters/commands");
+const gameHandler = require("./exporters/games");
 
 bot.login(TOKEN);
 

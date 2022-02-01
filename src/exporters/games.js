@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
-const anime = require("./helper/pics");
-const components = require("./helper/msgHelper");
+const anime = require("../helper/pics");
+const components = require("../helper/msgHelper");
 
 module.exports = async function (msg) {
   //8ball
