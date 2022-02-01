@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const task = require("../helper/web");
+const task = require("./helper/web");
 
 module.exports = async function (msg) {
   if (msg.content.toUpperCase() === "Hello DeployBot".toUpperCase()) {
