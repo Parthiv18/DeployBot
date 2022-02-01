@@ -4,13 +4,14 @@ const task = require("./helper/web");
 module.exports = async function (msg) {
   if (msg.content.toUpperCase() === "Hello DeployBot".toUpperCase()) {
     //msg.react("😄");
-    msg.channel.send("Welcome", {
+    msg.channel.send("Welcome to", {
       tts: true,
     });
   } else if (msg.content.toUpperCase() === "Gay".toUpperCase()) {
     msg.reply("Yes you are gay");
   }
 
+  //help
   if (msg.content.toUpperCase() === "-help".toUpperCase()) {
     msg.channel.send(
       "**Anime games:**\n" +
@@ -22,6 +23,28 @@ module.exports = async function (msg) {
         "**8ball:**\n" +
         'Type "-8ball" to play a game of 8ball\n'
     );
+  }
+
+  //kick
+  if (msg.content.startsWith("-kick")) {
+    const user = msg.mentions.users.first();
+    if (user) {
+      const member = msg.guild.member(user);
+      if (member) {
+        member
+          .kick("Optional reason that will display in the audit logs")
+          .then(() => {
+            msg.reply(`Successfully kicked ${user.tag}`);
+          })
+          .catch((err) => {
+            msg.reply("I was unable to kick the member");
+            // Log the error
+            console.error(err);
+          });
+      }
+    }
+  } else {
+    msg.reply("That user isn't in this guild!");
   }
 
   /* Avatar
