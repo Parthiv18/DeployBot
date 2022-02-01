@@ -90,4 +90,5 @@ exports.AOTCharacters = [
   "https://i.pinimg.com/564x/d9/c6/b0/d9c6b08391d2b2f610fec42875228484.jpg",
   "https://i.pinimg.com/564x/7a/6d/b6/7a6db6a43b68cfd6290a5261aa852852.jpg",
   "https://i.pinimg.com/564x/23/69/53/236953a46f6786e9ad9658fcffd159e5.jpg",
+  "https://i.pinimg.com/564x/e7/79/21/e779218c690eb392da1441789b4ce9fd.jpg",
 ]; //size 21
