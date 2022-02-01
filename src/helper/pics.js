@@ -50,6 +50,22 @@ exports.NarutoCharacters = [
   "https://i.pinimg.com/474x/63/bb/e7/63bbe7f2a6187d8484d874df904efa12.jpg",
   "https://i.pinimg.com/474x/37/ed/7b/37ed7b730624dd1a596e48aaec26791d.jpg",
   "https://i.pinimg.com/474x/62/b9/8b/62b98b73c5575c39fe582867c03308f1.jpg",
+  "https://i.pinimg.com/236x/58/bf/5d/58bf5d7973baf8f0f233b065c06f2e91.jpg",
+  "https://i.pinimg.com/236x/41/d4/e9/41d4e9b2ac6e7f44e647c1f3dfa32064.jpg",
+  "https://i.pinimg.com/236x/3c/f9/61/3cf961d1bd52322934bb63e68e075516.jpg",
+  "https://i.pinimg.com/236x/74/82/89/748289c04ffeb4df3b6e8d8f3d8539b4.jpg",
+  "https://i.pinimg.com/236x/49/fb/5f/49fb5f9a6a975e45418c8e803dd4fc62.jpg",
+  "https://i.pinimg.com/236x/e4/0b/48/e40b4800c08f04a9b67a17c6a0f1b05f.jpg",
+  "https://i.pinimg.com/236x/5d/61/ed/5d61ed165f6042813f9cbe580cbf6c75.jpg",
+  "https://i.pinimg.com/236x/0b/7d/6c/0b7d6ce5a6c931a5638def1fb2c5772f.jpg",
+  "https://i.pinimg.com/236x/03/36/30/033630f15a2e3cf0a49442f4fc2f9a59.jpg",
+  "https://i.pinimg.com/236x/80/20/f4/8020f4ebea81db1f224b8deaea0f10dd.jpg",
+  "https://i.pinimg.com/236x/00/64/e8/0064e8b2cc4c1118bdf30445f91f3325.jpg",
+  "https://i.pinimg.com/236x/2e/90/59/2e9059dc06866e3606834afa1247faaf.jpg",
+  "https://i.pinimg.com/236x/43/48/4c/43484cfe0993e6ff37db6d4d0727cd7e.jpg",
+  "https://i.pinimg.com/236x/a4/e6/ba/a4e6baa7d5390d6c8ab84ce5ef0760f1.jpg",
+  "https://i.pinimg.com/236x/92/5f/ef/925fef41988135d18d096bf6b333b171.jpg",
+  "https://i.pinimg.com/236x/3e/71/59/3e7159c1c90b3097992e9c89f34a8c1c.jpg",
 ]; //size
 
 exports.AOTCharacters = [
