@@ -4,20 +4,15 @@ module.exports = {
   //Stocks
   findStocks: async function (name) {
     const browser = await puppeteer.launch({
-      headless:true,
-      args:["--no-sandbox"]
+      headless: true,
+      args: ["--no-sandbox"],
     });
     try {
       const page = await browser.newPage();
-      await page.goto(
-        "https://www.google.com/search?q=" +
-          name +
-          "+stocks",
-        {
-          timeout: 0,
-          waitUntil: "networkidle0",
-        }
-      );
+      await page.goto("https://www.google.com/search?q=" + name + "+stocks", {
+        timeout: 0,
+        waitUntil: "networkidle0",
+      });
 
       const [getStockValue] = await page.$x(
         "/html/body/div[7]/div/div[10]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div/div/div/g-card-section/div/g-card-section/div[2]/div[1]/span[1]/span/span[1]"
@@ -42,8 +37,8 @@ module.exports = {
   //Crypto Method
   findCrypto: async function (name) {
     const browser = await puppeteer.launch({
-      headless:true,
-      args:["--no-sandbox"]
+      headless: true,
+      args: ["--no-sandbox"],
     });
     try {
       const page = await browser.newPage();
@@ -75,8 +70,8 @@ module.exports = {
   //IG
   findIG: async function (igName) {
     const browser = await puppeteer.launch({
-      headless:true,
-      args:["--no-sandbox"]
+      headless: true,
+      args: ["--no-sandbox"],
     });
     try {
       const page = await browser.newPage();
