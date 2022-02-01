@@ -50,12 +50,7 @@ module.exports = async function (msg) {
   if (msg.content.startsWith("-crypto") || msg.content.startsWith("-Crypto")) {
     var cryptoName = msg.content.split(" ");
     if (cryptoName.length === 2) {
-      try {
-        task.findCrypto(cryptoName[1]).then((x) => msg.reply(x));
-      } catch (err) {
-        //console.error(err.message);
-        return "Sorry we couldn't find that coin";
-      }
+      task.findCrypto(cryptoName[1]).then((x) => msg.reply(x));
     } else {
       msg.reply("Cannot Comprehend");
     }
