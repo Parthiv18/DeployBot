@@ -91,6 +91,7 @@ exports.AOTCharacters = [
   "https://i.pinimg.com/564x/7a/6d/b6/7a6db6a43b68cfd6290a5261aa852852.jpg",
   "https://i.pinimg.com/564x/23/69/53/236953a46f6786e9ad9658fcffd159e5.jpg",
   "https://i.pinimg.com/564x/e7/79/21/e779218c690eb392da1441789b4ce9fd.jpg",
+  "https://i.pinimg.com/474x/34/b4/fe/34b4fe5f6a1d8b8659ee732fbf3a3b07.jpg",
 ]; //size 21
 
 exports.AkameGaKill = [
