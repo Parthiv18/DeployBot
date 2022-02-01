@@ -29,7 +29,6 @@ module.exports = {
       return "\nCurrent Stock Value: $" + stockValue + "\nToday: " + stockToday;
     } catch (err) {
       console.error(err.message);
-      return "We are working on Stocks!";
     } finally {
       await browser.close();
     }
