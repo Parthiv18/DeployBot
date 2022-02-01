@@ -9,7 +9,7 @@ module.exports = async function (msg) {
       tts: true,
     });
   } else if (msg.content.toUpperCase() === "Gay".toUpperCase()) {
-    msg.reply("Yes you are gay");
+    msg.reply("Yes you're gay");
   }
 
   //help
