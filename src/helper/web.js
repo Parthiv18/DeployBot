@@ -36,7 +36,7 @@ module.exports = {
     }
   },
 
-  //Crypto
+  //Crypto Method
   findCrypto: async function (name) {
     const browser = await puppeteer.launch();
     try {
