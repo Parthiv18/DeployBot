@@ -11,10 +11,15 @@ module.exports = async function (msg) {
   }*/
 
   //New 8ball
-  if (msg.content.startsWith("-8ball")) {
+  if (msg.content.startsWith("-8ball ")) {
     var num =
       Math.floor(Math.random() * (components.ballReplies.length - 0 + 1)) + 0;
-    msg.reply(components.ballReplies[num]);
+    var ball = msg.content.split(" ");
+    if (ball.length > 1) {
+      msg.reply(components.ballReplies[num]);
+    } else if (ball.length <= 1) {
+      msg.reply('Yes or no question');
+    }
   }
 
   //Who am I - Anime
