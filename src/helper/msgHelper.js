@@ -14,5 +14,5 @@ var helpMsg =
   "**Stocks:**\n" +
   'Type "-stocks" followed by the name of the company to see the value of the stock\n' +
   "**8ball:**\n" +
-  'Type "-8ball" to play a game of 8ball\n';
+  'Type "-8ball" to play a game of 8ball!\n';
 exports.helpMsg = helpMsg;
