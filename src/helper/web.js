@@ -17,14 +17,13 @@ module.exports = {
       const [getStockName] = await page.$x(
         "/html/body/div[2]/div[4]/div[3]/header/div/div[2]/div[1]/div[1]/h1"
       );
-
       const [getStockValue] = await page.$x(
         "/html/body/div[2]/div[4]/div[3]/header/div/div[3]/div[1]/div/div/div/div[1]/div[1]"
       );
-
       const [getStockToday] = await page.$x(
         "/html/body/div[2]/div[4]/div[3]/header/div/div[3]/div[1]/div/div/div/div[1]/div[3]/span[1]"
       );
+
       const storeStockValue = await getStockValue.getProperty("textContent");
       const stockValue = await storeStockValue.jsonValue();
 
@@ -34,17 +33,12 @@ module.exports = {
       const storeStockToday = await getStockToday.getProperty("textContent");
       const stockToday = await storeStockToday.jsonValue();
 
-      /*
-        stockValue +
-        "" +
-      */
       return (
         "Search For: " +
         stockName +
         "\nCurrent Stock Value: $" +
         stockValue +
-        "" +
-        +" USD\nToday: " +
+        " USD\nToday: " +
         stockToday
       );
     } catch (err) {
