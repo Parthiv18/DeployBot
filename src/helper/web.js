@@ -3,7 +3,7 @@ const puppeteer = require("puppeteer");
 
 module.exports = {
   //Stocks
-  findStocks: async function (name) {
+  findStocks: async function (name, msg) {
     const browser = await puppeteer.launch({
       headless: true,
       args: ["--no-sandbox"],
@@ -24,9 +24,9 @@ module.exports = {
       const [getStockToday] = await page.$x(
         "/html/body/div[2]/div[4]/div[3]/header/div/div[3]/div[1]/div/div/div/div[1]/div[3]/span[1]"
       );
-      /*const [getStockPic] = await page.$x(
+      const [getStockPic] = await page.$x(
         "/html/body/div[2]/div[4]/div[3]/header/div/div[2]/img"
-      );*/
+      );
 
       const storeStockValue = await getStockValue.getProperty("textContent");
       const stockValue = await storeStockValue.jsonValue();
@@ -37,17 +37,19 @@ module.exports = {
       const storeStockToday = await getStockToday.getProperty("textContent");
       const stockToday = await storeStockToday.jsonValue();
 
-      /*const storeStockPic = await getStockPic.getProperty("src");
-      const stockPic = await storeStockPic.jsonValue();*/
+      const storeStockPic = await getStockPic.getProperty("src");
+      const stockPic = await storeStockPic.jsonValue();
 
-      return (
-        "\nSearch For: " +
-        stockName +
-        "\nCurrent Stock Value: $" +
-        stockValue +
-        " USD\nToday: " +
-        stockToday
-      );
+      const msgStyle = new Discord.RichEmbed()
+        .setTitle(stockName)
+        .setColor("RANDOM")
+        .addField(
+          "Information",
+          "Stock Value: $" + stockValue + "\nStock Today: " + stockToday + "%",
+          true
+        )
+        .setThumbnail(stockPic);
+      return msgStyle;
     } catch (err) {
       console.error(err.message);
       return "Please use stock name [TESLA -> TSLA]";
@@ -69,19 +71,41 @@ module.exports = {
         waitUntil: "networkidle0",
       });
 
+      const [getCryptoName] = await page.$x(
+        "/html/body/div[1]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div/div[1]/div[1]/h2"
+      );
       const [getCryptoValue] = await page.$x(
         '//*[@id="__next"]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span'
       );
       const [getCryptoToday] = await page.$x(
         '//*[@id="__next"]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/span'
       );
+      const [getCryptoPic] = await page.$x(
+        "/html/body/div[1]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div/div[1]/div[1]/img"
+      );
+
+      const storeGetCryptoName = await getCryptoName.getProperty("textContent");
+      const cryptoName = await storeGetCryptoName.jsonValue();
+
       const storeCryptoValue = await getCryptoValue.getProperty("textContent");
       const cryptoValue = await storeCryptoValue.jsonValue();
 
       const storeCryptoToday = await getCryptoToday.getProperty("textContent");
       const cryptoToday = await storeCryptoToday.jsonValue();
 
-      return "\nCurrent Price: " + cryptoValue + " USD\nToday: " + cryptoToday;
+      const storeGetCryptoPic = await getCryptoPic.getProperty("src");
+      const cryptoPic = await storeGetCryptoPic.jsonValue();
+
+      const msgStyle = new Discord.RichEmbed()
+        .setTitle(cryptoName)
+        .setColor("RANDOM")
+        .addField(
+          "Information",
+          "Crypto Value: " + cryptoValue + "\nCrypto Today: " + cryptoToday,
+          true
+        )
+        .setThumbnail(cryptoPic);
+      return msgStyle;
     } catch (err) {
       console.error(err.message);
       return "Please use coin name [BTC -> BITCOIN]";
