@@ -57,19 +57,16 @@ module.exports = {
     });
     try {
       const page = await browser.newPage();
-      await page.goto(
-        "https://www.nasdaq.com/market-activity/cryptocurrency/" + name,
-        {
-          timeout: 0,
-          waitUntil: "networkidle0",
-        }
-      );
+      await page.goto("https://coinmarketcap.com/currencies/" + name + "/", {
+        timeout: 0,
+        waitUntil: "networkidle0",
+      });
 
       const [getCryptoValue] = await page.$x(
-        "/html/body/div[1]/div/main/div[2]/div[3]/section/div[2]/div/div/div[1]/div[1]/div[2]/div[2]/div[2]/span[1]/span[2]"
+        '//*[@id="__next"]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span'
       );
       const [getCryptoToday] = await page.$x(
-        "/html/body/div[1]/div/main/div[2]/div[3]/section/div[2]/div/div/div[1]/div[1]/div[2]/div[2]/div[2]/div/span[2]"
+        '//*[@id="__next"]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/span'
       );
       const storeCryptoValue = await getCryptoValue.getProperty("textContent");
       const cryptoValue = await storeCryptoValue.jsonValue();
@@ -80,14 +77,15 @@ module.exports = {
       return "\nCurrent Price: " + cryptoValue + " USD\nToday: " + cryptoToday;
     } catch (err) {
       console.error(err.message);
-      return "Please use coin name [BITCOIN -> BTC]";
+      return "Please use coin name [BTC -> BITCOIN]";
     } finally {
       await browser.close();
     }
   },
 
   //Instagram
-  findIG: async function (igName) {},
+  findIG: async function (igName) {
+  },
 
   //something
 };
