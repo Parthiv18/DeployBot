@@ -135,8 +135,7 @@ exports.AkameGaKill = [
 //exporting pics
 function randomPic(arr, msg) {
   try {
-    var lengthVal = arr.length - 1;
-    var picPicker = Math.floor(Math.random() * (lengthVal - 0 + 1)) + 0;
+    var picPicker = Math.floor(Math.random() * (arr.length));
     return ("You Got: ", {
       files: [{ attachment: arr[picPicker] }],
     });
