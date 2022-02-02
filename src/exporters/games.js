@@ -48,15 +48,7 @@ module.exports = async function (msg) {
         animeName[1].toUpperCase() === "attackontitan".toUpperCase() ||
         animeName[1].toUpperCase() === "aot".toUpperCase()
       ) {
-        try {
-          var lengthVal = anime.AOTCharacters.length - 1;
-          var picPicker = Math.floor(Math.random() * (lengthVal - 0 + 1)) + 0;
-          msg.reply("You Got: ", {
-            files: [{ attachment: anime.AOTCharacters[picPicker] }],
-          });
-        } catch (err) {
-          msg.reply("Going too fast! Retry");
-        }
+        anime.randomPic(anime.AOTCharacters, msg);
       }
       //Anime [Akame Ga Kill]
       else if (
