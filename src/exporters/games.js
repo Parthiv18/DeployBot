@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+require("discord-reply");
 const anime = require("../helper/pics");
 const components = require("../helper/msgHelper");
 
@@ -8,7 +9,7 @@ module.exports = async function (msg) {
     var num = Math.floor(Math.random() * components.ballReplies.length);
     var ball = msg.content.split(" ");
     if (ball.length > 1) {
-      msg.reply(components.ballReplies[num]);
+      msg.lineReply(components.ballReplies[num]);
     } else if (ball.length <= 1) {
       msg.reply("Yes or no question");
     }
@@ -27,7 +28,7 @@ module.exports = async function (msg) {
           const msgStyle = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setAuthor(msg.author.tag, msg.author.avatarURL)
-            .setDescription("Anime: Demon Slayer")
+            .setDescription("Anime: Demon Slayer\nYou Got:")
             .setImage(anime.DemonSlayerCharacters[picPicker]);
           msg.channel.send(msgStyle);
         } catch (err) {
@@ -43,7 +44,7 @@ module.exports = async function (msg) {
           const msgStyle = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setAuthor(msg.author.tag, msg.author.avatarURL)
-            .setDescription("Anime: Naruto")
+            .setDescription("Anime: Naruto\nYou Got:")
             .setImage(anime.NarutoCharacters[picPicker]);
           msg.channel.send(msgStyle);
         } catch (err) {
@@ -62,7 +63,7 @@ module.exports = async function (msg) {
           const msgStyle = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setAuthor(msg.author.tag, msg.author.avatarURL)
-            .setDescription("Anime: Attack on Titan")
+            .setDescription("Anime: Attack on Titan\nYou Got:")
             .setImage(anime.AOTCharacters[picPicker]);
           msg.channel.send(msgStyle);
         } catch (err) {
@@ -81,7 +82,7 @@ module.exports = async function (msg) {
           const msgStyle = new Discord.RichEmbed() //testing new
             .setColor("RANDOM")
             .setAuthor(msg.author.tag, msg.author.avatarURL)
-            .setDescription("Anime: Akame Ga Kill")
+            .setDescription("Anime: Akame Ga Kill\nYou Got:")
             .setImage(anime.AkameGaKillCharacters[picPicker]);
           msg.channel.send(msgStyle);
         } catch (err) {
@@ -101,7 +102,7 @@ module.exports = async function (msg) {
           const msgStyle = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setAuthor(msg.author.tag, msg.author.avatarURL)
-            .setDescription("Anime: Jujitsu Kaisen")
+            .setDescription("Anime: Jujitsu Kaisen\nYou Got:")
             .setImage(anime.JJKCharacters[picPicker]);
           msg.channel.send(msgStyle);
         } catch (err) {
