@@ -11,7 +11,7 @@ module.exports = async function (msg) {
       const msgStyle = new Discord.RichEmbed()
         .setColor("RANDOM")
         .setAuthor(msg.author.tag, msg.author.avatarURL)
-        .addField('8ball Reply: ', components.ballReplies[num], true);
+        .addField("8ball Reply: ", components.ballReplies[num], true);
       msg.reply(msgStyle);
     } else if (ball.length <= 1) {
       msg.reply("Yes or no question");
