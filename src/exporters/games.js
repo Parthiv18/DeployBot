@@ -43,7 +43,7 @@ module.exports = async function (msg) {
           msg.reply("Going too fast! Retry");
         }
       }
-      //Anime [AOT]
+      //Anime [Attack on Titan]
       else if (
         animeName[1].toUpperCase() === "attackontitan".toUpperCase() ||
         animeName[1].toUpperCase() === "aot".toUpperCase()
