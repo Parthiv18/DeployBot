@@ -50,7 +50,7 @@ module.exports = async function (msg) {
   if (msg.content.startsWith("-crypto") || msg.content.startsWith("-Crypto")) {
     var cryptoName = msg.content.split(" ");
     if (cryptoName.length === 2) {
-      task.findCrypto(cryptoName[1]).then((x) => msg.channel.send(x));
+      task.findCrypto(cryptoName[1]).then((x) => msg.reply(x));
     } else {
       msg.reply("Cannot Comprehend");
     }

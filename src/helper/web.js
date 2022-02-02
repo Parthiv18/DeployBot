@@ -42,7 +42,6 @@ module.exports = {
 
       const msgStyle = new Discord.RichEmbed()
         .setColor("RANDOM")
-        .setAuthor(msg.author.tag, msg.author.avatarURL)
         .setDescription(stockName)
         .setImage(stockPic)
         .addFields(
