@@ -1,3 +1,4 @@
+const Discord = require("discord.js");
 const puppeteer = require("puppeteer");
 
 module.exports = {
@@ -23,6 +24,9 @@ module.exports = {
       const [getStockToday] = await page.$x(
         "/html/body/div[2]/div[4]/div[3]/header/div/div[3]/div[1]/div/div/div/div[1]/div[3]/span[1]"
       );
+      const [getStockPic] = await page.$x(
+        "/html/body/div[2]/div[4]/div[3]/header/div/div[2]/img"
+      );
 
       const storeStockValue = await getStockValue.getProperty("textContent");
       const stockValue = await storeStockValue.jsonValue();
@@ -33,14 +37,27 @@ module.exports = {
       const storeStockToday = await getStockToday.getProperty("textContent");
       const stockToday = await storeStockToday.jsonValue();
 
-      return (
+      const storeStockPic = await getStockPic.getProperty("src");
+      const stockPic = await storeStockPic.jsonValue();
+
+      const msgStyle = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setAuthor(msg.author.tag, msg.author.avatarURL)
+        .setDescription(stockName)
+        .setImage(stockPic)
+        .addFields(
+          { name: "Stock Price", value: stockValue },
+          { name: "Stock Today", value: "stockToday", inline: true }
+        );
+      return msgStyle;
+      /*return (
         "\nSearch For: " +
         stockName +
         "\nCurrent Stock Value: $" +
         stockValue +
         " USD\nToday: " +
         stockToday
-      );
+      );*/
     } catch (err) {
       console.error(err.message);
       return "Please use stock name [TESLA -> TSLA]";
