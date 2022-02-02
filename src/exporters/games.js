@@ -69,10 +69,26 @@ module.exports = async function (msg) {
       ) {
         try {
           var picPicker = Math.floor(
-            Math.random() * (anime.AkameGaKill.length + 1)
+            Math.random() * (anime.AkameGaKillCharacters.length + 1)
           );
           msg.reply("You Got: ", {
-            files: [{ attachment: anime.AkameGaKill[picPicker] }],
+            files: [{ attachment: anime.AkameGaKillCharacters[picPicker] }],
+          });
+        } catch (err) {
+          msg.reply("Going too fast! Retry");
+        }
+      }
+      //Anime [JJK]
+      else if (
+        animeName[1].toUpperCase() === "jjk".toUpperCase() ||
+        animeName[1].toUpperCase() === "jujitsukaisen".toUpperCase()
+      ) {
+        try {
+          var picPicker = Math.floor(
+            Math.random() * (anime.JJKCharacters.length + 1)
+          );
+          msg.reply("You Got: ", {
+            files: [{ attachment: anime.JJKCharacters[picPicker] }],
           });
         } catch (err) {
           msg.reply("Going too fast! Retry");
