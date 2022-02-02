@@ -1,7 +1,7 @@
 //8ball replies
 exports.ballReplies = [
   "As I see it, yes!",
-  "Please STFU",
+  "Please stfu",
   "It is decidedly so!",
   "Don't count on it!",
   "My sources say no",
