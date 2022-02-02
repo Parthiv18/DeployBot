@@ -27,7 +27,7 @@ module.exports = async function (msg) {
           const msgStyle = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setAuthor(msg.author.tag, msg.author.avatarURL)
-            .setDescription("Demon Slayer")
+            .setDescription("Anime: Demon Slayer")
             .setImage(anime.DemonSlayerCharacters[picPicker]);
           msg.channel.send(msgStyle);
         } catch (err) {
@@ -43,7 +43,7 @@ module.exports = async function (msg) {
           const msgStyle = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setAuthor(msg.author.tag, msg.author.avatarURL)
-            .setDescription("Naruto")
+            .setDescription("Anime: Naruto")
             .setImage(anime.NarutoCharacters[picPicker]);
           msg.channel.send(msgStyle);
         } catch (err) {
@@ -62,7 +62,7 @@ module.exports = async function (msg) {
           const msgStyle = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setAuthor(msg.author.tag, msg.author.avatarURL)
-            .setDescription("Attack on Titan")
+            .setDescription("Anime: Attack on Titan")
             .setImage(anime.AOTCharacters[picPicker]);
           msg.channel.send(msgStyle);
         } catch (err) {
@@ -78,10 +78,10 @@ module.exports = async function (msg) {
           var picPicker = Math.floor(
             Math.random() * (anime.AkameGaKillCharacters.length + 1)
           );
-          const msgStyle = new Discord.RichEmbed()
+          const msgStyle = new Discord.MessageEmbed() //testing new
             .setColor("RANDOM")
             .setAuthor(msg.author.tag, msg.author.avatarURL)
-            .setDescription("Akame Ga Kill")
+            .setDescription("Anime: Akame Ga Kill")
             .setImage(anime.AkameGaKillCharacters[picPicker]);
           msg.channel.send(msgStyle);
         } catch (err) {
@@ -101,7 +101,7 @@ module.exports = async function (msg) {
           const msgStyle = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setAuthor(msg.author.tag, msg.author.avatarURL)
-            .setDescription("Jujitsu Kaisen")
+            .setDescription("Anime: Jujitsu Kaisen")
             .setImage(anime.JJKCharacters[picPicker]);
           msg.channel.send(msgStyle);
         } catch (err) {
