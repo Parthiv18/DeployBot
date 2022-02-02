@@ -34,7 +34,7 @@ module.exports = {
       const stockToday = await storeStockToday.jsonValue();
 
       return (
-        "Search For: " +
+        "\nSearch For: " +
         stockName +
         "\nCurrent Stock Value: $" +
         stockValue +
