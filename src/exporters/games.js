@@ -5,8 +5,9 @@ const components = require("../helper/msgHelper");
 module.exports = async function (msg) {
   //New 8ball
   if (msg.content.startsWith("-8ball")) {
+    var lengthVal = components.ballReplies.length - 1;
     var num =
-      Math.floor(Math.random() * (components.ballReplies.length - 1 - 0 + 1)) +
+      Math.floor(Math.random() * (lengthVal - 1 - 0 + 1)) +
       0;
     var ball = msg.content.split(" ");
     if (ball.length > 1) {
