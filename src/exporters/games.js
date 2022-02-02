@@ -6,9 +6,7 @@ module.exports = async function (msg) {
   //New 8ball
   if (msg.content.startsWith("-8ball")) {
     var lengthVal = components.ballReplies.length - 1;
-    var num =
-      Math.floor(Math.random() * (lengthVal - 1 - 0 + 1)) +
-      0;
+    var num = Math.floor(Math.random() * (lengthVal - 1 - 0 + 1)) + 0;
     var ball = msg.content.split(" ");
     if (ball.length > 1) {
       msg.reply(components.ballReplies[num]);
