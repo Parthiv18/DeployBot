@@ -14,12 +14,12 @@ module.exports = {
         waitUntil: "networkidle0",
       });
 
-      const [getStockValue] = await page.$x(
-        "/html/body/div[2]/div[4]/div[3]/header/div/div[3]/div[1]/div/div/div/div[1]/div[1]"
+      const [getStockName] = await page.$x(
+        "/html/body/div[2]/div[4]/div[3]/header/div/div[2]/div[1]/div[1]/h1"
       );
 
-      const [getUpdateStocks] = await page.$x(
-        "/html/body/div[2]/div[4]/div[3]/header/div/div[3]/div[1]/div/div/div/div[1]/div[1]/span"
+      const [getStockValue] = await page.$x(
+        "/html/body/div[2]/div[4]/div[3]/header/div/div[3]/div[1]/div/div/div/div[1]/div[1]"
       );
 
       const [getStockToday] = await page.$x(
@@ -28,10 +28,8 @@ module.exports = {
       const storeStockValue = await getStockValue.getProperty("textContent");
       const stockValue = await storeStockValue.jsonValue();
 
-      const storeupdateStocks = await getUpdateStocks.getProperty(
-        "textContent"
-      );
-      const updateStocks = await storeupdateStocks.jsonValue();
+      const storeStockName = await getStockName.getProperty("textContent");
+      const stockName = await storeStockName.jsonValue();
 
       const storeStockToday = await getStockToday.getProperty("textContent");
       const stockToday = await storeStockToday.jsonValue();
@@ -41,7 +39,13 @@ module.exports = {
         "" +
       */
       return (
-        "\nCurrent Stock Value: $" + updateStocks + " USD\nToday: " + stockToday
+        "Search For: " +
+        stockName +
+        "\nCurrent Stock Value: $" +
+        stockValue +
+        "" +
+        +" USD\nToday: " +
+        stockToday
       );
     } catch (err) {
       console.error(err.message);
