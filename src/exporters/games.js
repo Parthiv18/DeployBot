@@ -63,16 +63,7 @@ module.exports = async function (msg) {
         animeName[1].toUpperCase() === "akame".toUpperCase() ||
         animeName[1].toUpperCase() === "akamegakill".toUpperCase()
       ) {
-        try {
-          var lengthVal = anime.AkameGaKill.length - 1;
-          var picPicker = Math.floor(Math.random() * (lengthVal - 0 + 1)) + 0;
-          msg.reply("You Got: ", {
-            files: [{ attachment: anime.AkameGaKill[picPicker] }],
-          });
-        } catch (err) {
-          console.log(err);
-          msg.reply("Going too fast! Retry");
-        }
+          anime.randomPic(animeName,msg);
       }
       //no anime
       else {

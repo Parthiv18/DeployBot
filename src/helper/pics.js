@@ -43,7 +43,6 @@ exports.DemonSlayerCharacters = [
   "https://i.pinimg.com/564x/6e/9d/f9/6e9df9ff7c85542a97f75d01ddbe95c9.jpg",
   "https://i.pinimg.com/564x/90/af/3d/90af3d0a21bb9d960afc519d9dbfb58a.jpg",
   "https://i.pinimg.com/564x/cb/1c/4a/cb1c4a20d710fdef777bd6ba0ce4d2b7.jpg",
-
 ]; //size 44
 
 exports.NarutoCharacters = [
@@ -132,3 +131,20 @@ exports.AkameGaKill = [
   "https://i.pinimg.com/474x/fe/84/73/fe84735a2f4333f5698d5398a69817dc.jpg",
   "https://i.pinimg.com/474x/06/cb/8b/06cb8b22d4de97364cc8f8cc95961908.jpg",
 ];
+
+//exporting pics
+function randomPic(arr, msg) {
+  try {
+    var lengthVal = arr.length - 1;
+    var picPicker = Math.floor(Math.random() * (lengthVal - 0 + 1)) + 0;
+    msg.reply("You Got: ", {
+      files: [{ attachment: arr[picPicker] }],
+    });
+  } catch (err) {
+    msg.reply("Going too fast! Retry");
+  }
+}
+
+module.exports = {
+  randomPic,
+};
