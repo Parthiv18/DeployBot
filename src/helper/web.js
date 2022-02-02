@@ -36,13 +36,12 @@ module.exports = {
       const storeStockToday = await getStockToday.getProperty("textContent");
       const stockToday = await storeStockToday.jsonValue();
 
-      return (
-        "\nCurrent Stock Value: $" +
+      /*
         stockValue +
         "" +
-        updateStocks +
-        " USD\nToday: " +
-        stockToday
+      */
+      return (
+        "\nCurrent Stock Value: $" + updateStocks + " USD\nToday: " + stockToday
       );
     } catch (err) {
       console.error(err.message);
