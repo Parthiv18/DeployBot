@@ -76,7 +76,6 @@ module.exports = async function (msg) {
             files: [{ attachment: anime.AkameGaKill[picPicker] }],
           });
         } catch (err) {
-          console.log(err);
           msg.reply("Going too fast! Retry");
         }
       }
