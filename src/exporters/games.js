@@ -42,6 +42,7 @@ module.exports = async function (msg) {
             files: [{ attachment: anime.NarutoCharacters[picPicker] }],
           });
         } catch (err) {
+          console.log(err);
           msg.reply("Going too fast! Retry");
         }
       }
@@ -57,6 +58,7 @@ module.exports = async function (msg) {
             files: [{ attachment: anime.AOTCharacters[picPicker] }],
           });
         } catch (err) {
+          console.log(err);
           msg.reply("Going too fast! Retry");
         }
       }
