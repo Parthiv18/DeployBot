@@ -95,31 +95,14 @@ module.exports = {
         waitUntil: "networkidle0",
       });
 
-      const [igGetName] = await page.$x(
-        "/html/body/div[1]/section/main/div/header/section/div[1]/h2"
-      );
-      const [getName] = await page.$x(
-        "/html/body/div[1]/section/main/div/header/section/div[2]/span"
-      );
-      const [igGetPic] = await page.$x(
-        "/html/body/div[1]/section/main/div/header/div/div/span/img"
-      );
-      const igStoreName = await igGetName.getProperty("textContent");
-      const igRawName = await igStoreName.jsonValue();
-
-      const storeName = await getName.getProperty("textContent");
-      const rawName = await storeName.jsonValue();
-
-      const igStorePic = await igGetPic.getProperty("src");
-      const igRawPic = await igStorePic.jsonValue();
+      const igRawName;
+      let igGetName = await page.evaluate(() => {
+        igRawName = document.querySelectorAll('header > section h1')[0].textContent;
+    });
+    
       return (
         "\nUser Name: @" +
-        igRawName +
-        "\nName: " +
-        rawName +
-        "\nPic: " +
-        igRawPic
-      );
+        igRawName);
     } catch (err) {
       console.error(err.message);
     } finally {
