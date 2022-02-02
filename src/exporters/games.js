@@ -78,7 +78,7 @@ module.exports = async function (msg) {
           var picPicker = Math.floor(
             Math.random() * (anime.AkameGaKillCharacters.length + 1)
           );
-          const msgStyle = new Discord.MessageEmbed() //testing new
+          const msgStyle = new Discord.RichEmbed() //testing new
             .setColor("RANDOM")
             .setAuthor(msg.author.tag, msg.author.avatarURL)
             .setDescription("Anime: Akame Ga Kill")
