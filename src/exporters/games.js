@@ -63,7 +63,7 @@ module.exports = async function (msg) {
         animeName[1].toUpperCase() === "akame".toUpperCase() ||
         animeName[1].toUpperCase() === "akamegakill".toUpperCase()
       ) {
-          anime.randomPic(anime.AkameGaKill,msg);
+        anime.randomPic(anime.AkameGaKill, msg);
       }
       //no anime
       else {
