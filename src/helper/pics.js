@@ -132,6 +132,31 @@ exports.AkameGaKill = [
   "https://i.pinimg.com/474x/06/cb/8b/06cb8b22d4de97364cc8f8cc95961908.jpg",
 ];
 
+exports.JJK = [
+  "https://i.pinimg.com/736x/6a/9f/0d/6a9f0d9dfadf3b3b1044e01d9e44ae6d.jpg",
+  "https://i.pinimg.com/564x/d0/10/d7/d010d76c672df38a52b60aca4c838adb.jpg",
+  "https://i.pinimg.com/564x/7d/07/74/7d0774c44f6768a8e5696edff37731e9.jpg",
+  "https://i.pinimg.com/564x/c5/3e/ef/c53eef9ed11e1199b594cdca63fea2c3.jpg",
+  "https://i.pinimg.com/564x/fe/05/93/fe0593149ceea33902f8636aee28c3d1.jpg",
+  "https://i.pinimg.com/564x/71/62/7f/71627f7671379d2a4b31cc36f7957183.jpg",
+  "https://i.pinimg.com/564x/7b/9a/65/7b9a6536064cc3e0808cb023c407089e.jpg",
+  "https://i.pinimg.com/564x/ea/db/d1/eadbd19919ed822f44635568655f62f1.jpg",
+  "https://i.pinimg.com/564x/c5/bb/6d/c5bb6d98501164749a1aec419ff9cfc5.jpg",
+  "https://i.pinimg.com/564x/c1/81/a3/c181a3aa2f0b64bebc0902647e8d328b.jpg",
+  "https://i.pinimg.com/564x/75/e4/b8/75e4b8c8130164eaa00aac919d5e03a6.jpg",
+  "https://i.pinimg.com/564x/7a/5e/8b/7a5e8b43eadcb32fdcf46d461f9a8964.jpg",
+  "https://i.pinimg.com/564x/90/d6/c2/90d6c26a7ebd1e3d9bb1b5a56cc9b654.jpg",
+  "https://i.pinimg.com/564x/e7/90/7a/e7907af872fd55cadca7282de803bae2.jpg",
+  "https://i.pinimg.com/564x/21/0a/cc/210acc48935ffc8bfc304c21a84e2f3e.jpg",
+  "https://i.pinimg.com/564x/a0/ae/68/a0ae688e23d3f099aad364781dc3591b.jpg",
+  "https://i.pinimg.com/564x/7c/2f/73/7c2f7328fac7cc2ed866dbbcdb7bbf18.jpg",
+  "https://i.pinimg.com/564x/59/5b/31/595b31609b3ca6d9bc117402aee9873c.jpg",
+  "https://i.pinimg.com/564x/c8/1e/d9/c81ed961dac4b47ee296d55dc57579a5.jpg",
+  "https://i.pinimg.com/564x/39/c8/81/39c88122c6313e135f2064a6ad5caa28.jpg",
+  "https://i.pinimg.com/564x/7a/bc/be/7abcbe6a01d148f696ec2417c40fdd8d.jpg",
+
+]; //21
+
 module.exports = {
   randomPic: function (arr, msg) {
     try {
@@ -143,7 +168,7 @@ module.exports = {
         }
       );
     } catch (err) {
-      return "Going too fast! Retry";
+      return "Going too fast! Retry in 10 seconds.";
     }
   },
 };

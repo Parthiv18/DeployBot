@@ -40,7 +40,7 @@ module.exports = async function (msg) {
             files: [{ attachment: anime.NarutoCharacters[picPicker] }],
           });
         } catch (err) {
-          msg.reply("Going too fast! Retry");
+          msg.reply("Going too fast! Retry in 10 seconds");
         }
       }
       //Anime [Attack on Titan]
@@ -56,7 +56,13 @@ module.exports = async function (msg) {
         animeName[1].toUpperCase() === "akamegakill".toUpperCase()
       ) {
         anime.randomPic(anime.AkameGaKill, msg);
+      } else if (
+        animeName[1].toUpperCase() === "JJK".toUpperCase() ||
+        animeName[1].toUpperCase() === "jujitsukaisen".toUpperCase()
+      ) {
+        anime.randomPic(anime.JJK, msg);
       }
+
       //no anime
       else {
         msg.reply(
