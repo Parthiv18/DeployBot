@@ -22,8 +22,9 @@ module.exports = async function (msg) {
       //Anime [Demon Slayer]
       if (animeName[1].toUpperCase() === "DemonSlayer".toUpperCase()) {
         try {
-          var lengthVal = anime.DemonSlayerCharacters.length - 1;
-          var picPicker = Math.floor(Math.random() * (lengthVal - 0 + 1)) + 0;
+          var picPicker = Math.floor(
+            Math.random() * anime.DemonSlayerCharacters.length
+          );
           msg.reply("You Got: ", {
             files: [{ attachment: anime.DemonSlayerCharacters[picPicker] }],
           });
@@ -34,8 +35,9 @@ module.exports = async function (msg) {
       //Anime [Naruto]
       else if (animeName[1].toUpperCase() === "naruto".toUpperCase()) {
         try {
-          var lengthVal = anime.NarutoCharacters.length - 1;
-          var picPicker = Math.floor(Math.random() * (lengthVal - 0 + 1)) + 0;
+          var picPicker = Math.floor(
+            Math.random() * anime.NarutoCharacters.length
+          );
           msg.reply("You Got: ", {
             files: [{ attachment: anime.NarutoCharacters[picPicker] }],
           });
