@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-require('discord-reply');
 const bot = new Discord.Client();
 
 require("dotenv").config();

@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-require("discord-reply");
 const anime = require("../helper/pics");
 const components = require("../helper/msgHelper");
 
@@ -9,7 +8,11 @@ module.exports = async function (msg) {
     var num = Math.floor(Math.random() * components.ballReplies.length);
     var ball = msg.content.split(" ");
     if (ball.length > 1) {
-      msg.lineReply(components.ballReplies[num]);
+      const msgStyle = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setAuthor(msg.author.tag, msg.author.avatarURL)
+        .addField(components.ballReplies[num]);
+      msg.reply(msgStyle);
     } else if (ball.length <= 1) {
       msg.reply("Yes or no question");
     }
