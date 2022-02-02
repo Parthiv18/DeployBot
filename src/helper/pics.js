@@ -132,18 +132,18 @@ exports.AkameGaKill = [
   "https://i.pinimg.com/474x/06/cb/8b/06cb8b22d4de97364cc8f8cc95961908.jpg",
 ];
 
-//exporting pics
-function randomPic(arr, msg) {
-  try {
-    var picPicker = Math.floor(Math.random() * (arr.length));
-    return ("You Got: ", {
-      files: [{ attachment: arr[picPicker] }],
-    });
-  } catch (err) {
-    return ("Going too fast! Retry");
-  }
-}
-
 module.exports = {
-  randomPic,
+  randomPic: function (arr, msg) {
+    try {
+      var picPicker = Math.floor(Math.random() * arr.length);
+      return (
+        "You Got: ",
+        {
+          files: [{ attachment: arr[picPicker] }],
+        }
+      );
+    } catch (err) {
+      return "Going too fast! Retry";
+    }
+  },
 };
