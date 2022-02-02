@@ -154,5 +154,4 @@ exports.JJKCharacters = [
   "https://i.pinimg.com/564x/c8/1e/d9/c81ed961dac4b47ee296d55dc57579a5.jpg",
   "https://i.pinimg.com/564x/39/c8/81/39c88122c6313e135f2064a6ad5caa28.jpg",
   "https://i.pinimg.com/564x/7a/bc/be/7abcbe6a01d148f696ec2417c40fdd8d.jpg",
-
 ]; //21
