@@ -84,30 +84,6 @@ module.exports = {
 
   //IG
   findIG: async function (igName) {
-    const browser = await puppeteer.launch({
-      headless: true,
-      args: ["--no-sandbox"],
-    });
-    try {
-      const page = await browser.newPage();
-      await page.goto("https://www.instagram.com/" + igName + "/", {
-        timeout: 0,
-        waitUntil: "networkidle0",
-      });
-
-      const igRawName;
-      let igGetName = await page.evaluate(() => {
-        igRawName = document.querySelectorAll('header > section h1')[0].textContent;
-    });
-    
-      return (
-        "\nUser Name: @" +
-        igRawName);
-    } catch (err) {
-      console.error(err.message);
-    } finally {
-      await browser.close();
-    }
   },
 
   //something
