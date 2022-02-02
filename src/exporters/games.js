@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const Discord = require("discord.js");
 const anime = require("../helper/pics");
 const components = require("../helper/msgHelper");
 
@@ -24,18 +24,12 @@ module.exports = async function (msg) {
           var picPicker = Math.floor(
             Math.random() * anime.DemonSlayerCharacters.length
           );
-          /*msg.reply("You Got: ", {
-            files: [{ attachment: anime.DemonSlayerCharacters[picPicker] }],
-          });*/
-          const msgReply = new MessageEmbed()
-            .setColor("#0099ff")
-            .setTitle("Demon Slayer")
-            .setDescription("You Got:")
-            .setImage({
-              files: [{ attachment: anime.DemonSlayerCharacters[picPicker] }],
-            })
-            .setTimestamp();
-          msg.reply(msgReply);
+          const msgStyle = new Discord.RichEmbed()
+            .setColor("RANDOM")
+            .setAuthor(msg.author.tag, msg.author.avatarURL)
+            .setDescription("Demon Slayer")
+            .setImage(anime.DemonSlayerCharacters[picPicker]);
+          msg.channel.send(msgStyle);
         } catch (err) {
           msg.reply("Going too fast! Retry");
         }
@@ -46,11 +40,13 @@ module.exports = async function (msg) {
           var picPicker = Math.floor(
             Math.random() * anime.NarutoCharacters.length
           );
-          msg.reply("You Got: ", {
-            files: [{ attachment: anime.NarutoCharacters[picPicker] }],
-          });
+          const msgStyle = new Discord.RichEmbed()
+            .setColor("RANDOM")
+            .setAuthor(msg.author.tag, msg.author.avatarURL)
+            .setDescription("Naruto")
+            .setImage(anime.NarutoCharacters[picPicker]);
+          msg.channel.send(msgStyle);
         } catch (err) {
-          console.log(err);
           msg.reply("Going too fast! Retry");
         }
       }
@@ -63,11 +59,13 @@ module.exports = async function (msg) {
           var picPicker = Math.floor(
             Math.random() * anime.AOTCharacters.length
           );
-          msg.reply("You Got: ", {
-            files: [{ attachment: anime.AOTCharacters[picPicker] }],
-          });
+          const msgStyle = new Discord.RichEmbed()
+            .setColor("RANDOM")
+            .setAuthor(msg.author.tag, msg.author.avatarURL)
+            .setDescription("Attack on Titan")
+            .setImage(anime.AOTCharacters[picPicker]);
+          msg.channel.send(msgStyle);
         } catch (err) {
-          console.log(err);
           msg.reply("Going too fast! Retry");
         }
       }
@@ -80,10 +78,14 @@ module.exports = async function (msg) {
           var picPicker = Math.floor(
             Math.random() * (anime.AkameGaKillCharacters.length + 1)
           );
-          msg.reply("You Got: ", {
-            files: [{ attachment: anime.AkameGaKillCharacters[picPicker] }],
-          });
+          const msgStyle = new Discord.RichEmbed()
+            .setColor("RANDOM")
+            .setAuthor(msg.author.tag, msg.author.avatarURL)
+            .setDescription("Akame Ga Kill")
+            .setImage(anime.AkameGaKillCharacters[picPicker]);
+          msg.channel.send(msgStyle);
         } catch (err) {
+          console.log(err);
           msg.reply("Going too fast! Retry");
         }
       }
@@ -96,9 +98,12 @@ module.exports = async function (msg) {
           var picPicker = Math.floor(
             Math.random() * (anime.JJKCharacters.length + 1)
           );
-          msg.reply("You Got: ", {
-            files: [{ attachment: anime.JJKCharacters[picPicker] }],
-          });
+          const msgStyle = new Discord.RichEmbed()
+            .setColor("RANDOM")
+            .setAuthor(msg.author.tag, msg.author.avatarURL)
+            .setDescription("Jujitsu Kaisen")
+            .setImage(anime.JJKCharacters[picPicker]);
+          msg.channel.send(msgStyle);
         } catch (err) {
           msg.reply("Going too fast! Retry");
         }
