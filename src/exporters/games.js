@@ -52,8 +52,9 @@ module.exports = async function (msg) {
         animeName[1].toUpperCase() === "aot".toUpperCase()
       ) {
         try {
-          var lengthVal = anime.AOTCharacters.length - 1;
-          var picPicker = Math.floor(Math.random() * (lengthVal - 0 + 1)) + 0;
+          var picPicker = Math.floor(
+            Math.random() * anime.AOTCharacters.length
+          );
           msg.reply("You Got: ", {
             files: [{ attachment: anime.AOTCharacters[picPicker] }],
           });
@@ -67,7 +68,17 @@ module.exports = async function (msg) {
         animeName[1].toUpperCase() === "akame".toUpperCase() ||
         animeName[1].toUpperCase() === "akamegakill".toUpperCase()
       ) {
-        anime.randomPic(anime.AkameGaKill, msg);
+        try {
+          var picPicker = Math.floor(
+            Math.random() * anime.AkameGaKill.length
+          );
+          msg.reply("You Got: ", {
+            files: [{ attachment: anime.AkameGaKill[picPicker] }],
+          });
+        } catch (err) {
+          console.log(err);
+          msg.reply("Going too fast! Retry");
+        }
       }
       //no anime
       else {
