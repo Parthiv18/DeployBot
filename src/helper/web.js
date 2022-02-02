@@ -99,10 +99,10 @@ module.exports = {
         "/html/body/div[1]/section/main/div/header/section/div[1]/h2"
       );
       const [getName] = await page.$x(
-        "/html/body/div[1]/section/main/div/header/section/div[2]/h1"
+        "/html/body/div[1]/section/main/div/header/section/div[2]/span"
       );
       const [igGetPic] = await page.$x(
-        '//*[@id="react-root"]/section/main/div/header/div/div/div/button/img'
+        "/html/body/div[1]/section/main/div/header/div/div/span/img"
       );
       const igStoreName = await igGetName.getProperty("textContent");
       const igRawName = await igStoreName.jsonValue();
@@ -112,7 +112,14 @@ module.exports = {
 
       const igStorePic = await igGetPic.getProperty("src");
       const igRawPic = await igStorePic.jsonValue();
-      return "\nUser Name: @" + igRawName + "\nName: " + rawName;
+      return (
+        "\nUser Name: @" +
+        igRawName +
+        "\nName: " +
+        rawName +
+        "\nPic: " +
+        igRawPic
+      );
     } catch (err) {
       console.error(err.message);
     } finally {
