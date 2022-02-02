@@ -19,7 +19,32 @@ exports.DemonSlayerCharacters = [
   "https://i.pinimg.com/474x/1c/f6/97/1cf697466cd21bede2651b5fa9106c2b.jpg",
   "https://i.pinimg.com/474x/7b/7f/d3/7b7fd35eebe28f4795ced1af35496d12.jpg",
   "https://i.pinimg.com/474x/fa/60/0a/fa600af3229d7948726b19b305c920c4.jpg",
-]; //size 11
+  "https://i.pinimg.com/564x/ad/ba/bc/adbabcd7451ab37445fe959500730038.jpg",
+  "https://i.pinimg.com/564x/5c/dd/8b/5cdd8b54d2af66c49d9ad7f338ef6f61.jpg",
+  "https://i.pinimg.com/564x/b4/6d/d6/b46dd62b97fb4fb72b8481747a1da22f.jpg",
+  "https://i.pinimg.com/564x/cd/fa/34/cdfa3479a666d6caa5197165c76fa4ca.jpg",
+  "https://i.pinimg.com/564x/de/78/ed/de78edc25c07b9c835a9c3a3b96101b7.jpg",
+  "https://i.pinimg.com/564x/72/89/0b/72890bb0ea056144e0ed65aa954e33b7.jpg",
+  "https://i.pinimg.com/564x/45/03/a9/4503a9c4358964488688f6b06c750e2a.jpg",
+  "https://i.pinimg.com/564x/f9/9c/e7/f99ce7f9d043f5bf3f4a5bec778d78a1.jpg",
+  "https://i.pinimg.com/564x/7b/cc/68/7bcc685606b343e393dbae31f0849f41.jpg",
+  "https://i.pinimg.com/564x/af/a5/8d/afa58d36a2bacf991d043dbab5e5effe.jpg",
+  "https://i.pinimg.com/564x/7a/51/b3/7a51b38a3af3af5db11b7cc3b0420f1b.jpg",
+  "https://i.pinimg.com/564x/32/a6/b6/32a6b6a94ac0e22313584be70364a7db.jpg",
+  "https://i.pinimg.com/564x/6e/57/12/6e57125e3b04678c351f891b20229162.jpg",
+  "https://i.pinimg.com/564x/eb/ca/a4/ebcaa44c6251d913017eaa890cc78ca9.jpg",
+  "https://i.pinimg.com/564x/98/7b/13/987b13a3f8bf8f7a67e7c9f214ab6614.jpg",
+  "https://i.pinimg.com/564x/e4/56/c0/e456c092c378be582464a083c85c8575.jpg",
+  "https://i.pinimg.com/564x/0f/8f/09/0f8f09ddd63c9aa319648df89cbc1b21.jpg",
+  "https://i.pinimg.com/564x/67/41/6d/67416db6b9473bca40fb476dc49e7152.jpg",
+  "https://i.pinimg.com/564x/8b/0d/0d/8b0d0d981a5eb1e2038b72d2cb2abc37.jpg",
+  "https://i.pinimg.com/564x/aa/49/d3/aa49d35bc12c9f236f3c611229016758.jpg",
+  "https://i.pinimg.com/564x/14/3e/5e/143e5e086d3c817f787433f76335feb2.jpg",
+  "https://i.pinimg.com/564x/6e/9d/f9/6e9df9ff7c85542a97f75d01ddbe95c9.jpg",
+  "https://i.pinimg.com/564x/90/af/3d/90af3d0a21bb9d960afc519d9dbfb58a.jpg",
+  "https://i.pinimg.com/564x/cb/1c/4a/cb1c4a20d710fdef777bd6ba0ce4d2b7.jpg",
+
+]; //size 44
 
 exports.NarutoCharacters = [
   "https://i.pinimg.com/474x/48/d8/39/48d83952759e421f15aaae74ef307ef9.jpg",
