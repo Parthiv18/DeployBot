@@ -31,9 +31,7 @@ module.exports = {
       );
     } catch (err) {
       console.error(err.message);
-      return (
-        "Please use stock name [TESLA -> TSLA]"
-      );
+      return "Please use stock name [TESLA -> TSLA]";
     } finally {
       await browser.close();
     }
