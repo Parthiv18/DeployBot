@@ -137,11 +137,11 @@ function randomPic(arr, msg) {
   try {
     var lengthVal = arr.length - 1;
     var picPicker = Math.floor(Math.random() * (lengthVal - 0 + 1)) + 0;
-    msg.reply("You Got: ", {
+    return ("You Got: ", {
       files: [{ attachment: arr[picPicker] }],
     });
   } catch (err) {
-    msg.reply("Going too fast! Retry");
+    return ("Going too fast! Retry");
   }
 }
 
