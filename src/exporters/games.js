@@ -3,11 +3,11 @@ const anime = require("../helper/pics");
 const components = require("../helper/msgHelper");
 
 module.exports = async function (msg) {
-
   //New 8ball
   if (msg.content.startsWith("-8ball")) {
     var num =
-      Math.floor(Math.random() * (components.ballReplies.length - 0 + 1)) + 0;
+      Math.floor(Math.random() * (components.ballReplies.length - 1 - 0 + 1)) +
+      0;
     var ball = msg.content.split(" ");
     if (ball.length > 1) {
       msg.reply(components.ballReplies[num]);
