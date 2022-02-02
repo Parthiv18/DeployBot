@@ -5,7 +5,7 @@ const components = require("../helper/msgHelper");
 module.exports = async function (msg) {
   //New 8ball
   if (msg.content.startsWith("-8ball")) {
-    var num = Math.floor(Math.random() * (components.ballReplies.length));
+    var num = Math.floor(Math.random() * components.ballReplies.length);
     var ball = msg.content.split(" ");
     if (ball.length > 1) {
       msg.reply(components.ballReplies[num]);
@@ -22,7 +22,7 @@ module.exports = async function (msg) {
       if (animeName[1].toUpperCase() === "DemonSlayer".toUpperCase()) {
         try {
           var picPicker = Math.floor(
-            Math.random() * (anime.DemonSlayerCharacters.length + 1)
+            Math.random() * anime.DemonSlayerCharacters.length
           );
           msg.reply("You Got: ", {
             files: [{ attachment: anime.DemonSlayerCharacters[picPicker] }],
@@ -35,7 +35,7 @@ module.exports = async function (msg) {
       else if (animeName[1].toUpperCase() === "naruto".toUpperCase()) {
         try {
           var picPicker = Math.floor(
-            Math.random() * (anime.NarutoCharacters.length + 1)
+            Math.random() * anime.NarutoCharacters.length
           );
           msg.reply("You Got: ", {
             files: [{ attachment: anime.NarutoCharacters[picPicker] }],
@@ -52,7 +52,7 @@ module.exports = async function (msg) {
       ) {
         try {
           var picPicker = Math.floor(
-            Math.random() * (anime.AOTCharacters.length + 1)
+            Math.random() * anime.AOTCharacters.length
           );
           msg.reply("You Got: ", {
             files: [{ attachment: anime.AOTCharacters[picPicker] }],
