@@ -15,20 +15,34 @@ module.exports = {
       });
 
       const [getStockValue] = await page.$x(
-        //"/html/body/div[2]/div[4]/div[3]/header/div/div[3]/div[1]/div/div/div/div[1]/div[1]/span"
         "/html/body/div[2]/div[4]/div[3]/header/div/div[3]/div[1]/div/div/div/div[1]/div[1]"
       );
+
+      const [getUpdateStocks] = await page.$x(
+        "/html/body/div[2]/div[4]/div[3]/header/div/div[3]/div[1]/div/div/div/div[1]/div[1]/span"
+      );
+
       const [getStockToday] = await page.$x(
         "/html/body/div[2]/div[4]/div[3]/header/div/div[3]/div[1]/div/div/div/div[1]/div[3]/span[1]"
       );
       const storeStockValue = await getStockValue.getProperty("textContent");
       const stockValue = await storeStockValue.jsonValue();
 
+      const storeupdateStocks = await getUpdateStocks.getProperty(
+        "textContent"
+      );
+      const updateStocks = await storeupdateStocks.jsonValue();
+
       const storeStockToday = await getStockToday.getProperty("textContent");
       const stockToday = await storeStockToday.jsonValue();
 
       return (
-        "\nCurrent Stock Value: $" + stockValue + " USD\nToday: " + stockToday
+        "\nCurrent Stock Value: $" +
+        stockValue +
+        "" +
+        updateStocks +
+        " USD\nToday: " +
+        stockToday
       );
     } catch (err) {
       console.error(err.message);
