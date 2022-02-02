@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const anime = require("../helper/pics");
 const components = require("../helper/msgHelper");
 
@@ -24,9 +24,18 @@ module.exports = async function (msg) {
           var picPicker = Math.floor(
             Math.random() * anime.DemonSlayerCharacters.length
           );
-          msg.reply("You Got: ", {
+          /*msg.reply("You Got: ", {
             files: [{ attachment: anime.DemonSlayerCharacters[picPicker] }],
-          });
+          });*/
+          const msgReply = new MessageEmbed()
+            .setColor("#0099ff")
+            .setTitle("Demon Slayer")
+            .setDescription("You Got:")
+            .setImage({
+              files: [{ attachment: anime.DemonSlayerCharacters[picPicker] }],
+            })
+            .setTimestamp();
+          msg.reply(msgReply);
         } catch (err) {
           msg.reply("Going too fast! Retry");
         }

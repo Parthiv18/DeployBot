@@ -84,8 +84,7 @@ module.exports = {
   },
 
   //Instagram
-  findIG: async function (igName) {
-  },
+  findIG: async function (igName) {},
 
   //something
 };
