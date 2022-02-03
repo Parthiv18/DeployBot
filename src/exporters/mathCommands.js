@@ -10,7 +10,7 @@ module.exports = async function (msg) {
       const msgStyle = new Discord.MessageEmbed()
         .setColor("RANDOM")
         .setTitle("Differentiation")
-        .addField("Output: ", e.text() , true)
+        .addField("Output: ", e.text(), true)
         .setTimestamp();
       msg.channel.send({ embeds: [msgStyle] });
     }
