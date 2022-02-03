@@ -52,10 +52,8 @@ module.exports = async function (msg) {
   //Anime Wallpaper
   if (msg.content.startsWith("-wall")) {
     var animeCharName = msg.content.split(" ");
-    if (animeCharName.length === 2) {
-      task.animeBackground(animeCharName[1]).then((x) => msg.reply(x));
-    } else {
-      msg.reply("Cannot Comprehend");
-    }
+    var fullName = animeCharName.slice(1).join("+");
+
+    task.animeBackground(fullName).then((x) => msg.reply(x));
   }
 };
