@@ -40,16 +40,17 @@ module.exports = {
       const storeStockPic = await getStockPic.getProperty("src");
       const stockPic = await storeStockPic.jsonValue();
 
-      const msgStyle = new Discord.RichEmbed()
-        .setTitle(stockName)
+      const msgStyle = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .addField(
-          "Information",
-          "Stock Value: $" + stockValue + "\nStock Today: " + stockToday + "%",
-          true
+        .setTitle("Stock Market")
+        .setAuthor({ name: stockName })
+        .setThumbnail(stockPic)
+        .addFields(
+          { name: "Stock Value", value: "$" + stockValue },
+          { name: "Stock Today", value: stockToday + "%", inline: true }
         )
-        .setThumbnail(stockPic);
-      return msgStyle;
+        .setTimestamp();
+      return { embeds: [msgStyle] };
     } catch (err) {
       console.error(err.message);
       return "Please use stock name [TESLA -> TSLA]";
@@ -96,16 +97,17 @@ module.exports = {
       const storeGetCryptoPic = await getCryptoPic.getProperty("src");
       const cryptoPic = await storeGetCryptoPic.jsonValue();
 
-      const msgStyle = new Discord.RichEmbed()
-        .setTitle(cryptoName)
+      const msgStyle = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .addField(
-          "Information",
-          "Crypto Value: " + cryptoValue + "\nCrypto Today: " + cryptoToday,
-          true
+        .setTitle("Crypto")
+        .setAuthor({ name: cryptoName })
+        .setThumbnail(cryptoPic)
+        .addFields(
+          { name: "Crypto Value", value: cryptoValue },
+          { name: "Crypto Today", value: cryptoToday, inline: true }
         )
-        .setThumbnail(cryptoPic);
-      return msgStyle;
+        .setTimestamp();
+      return { embeds: [msgStyle] };
     } catch (err) {
       console.error(err.message);
       return "Please use coin name [BTC -> BITCOIN]";

@@ -8,11 +8,10 @@ module.exports = async function (msg) {
     var num = Math.floor(Math.random() * components.ballReplies.length);
     var ball = msg.content.split(" ");
     if (ball.length > 1) {
-      const msgStyle = new Discord.RichEmbed()
+      const msgStyle = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .setAuthor(msg.author.tag, msg.author.avatarURL)
-        .addField("8ball Reply: ", components.ballReplies[num], true);
-      msg.reply(msgStyle);
+        .addField("8ball Reply: ", components.ballReplies[num], true)
+      msg.channel.send({ embeds: [msgStyle] });
     } else if (ball.length <= 1) {
       msg.reply("Yes or no question");
     }
@@ -28,12 +27,13 @@ module.exports = async function (msg) {
           var picPicker = Math.floor(
             Math.random() * anime.DemonSlayerCharacters.length
           );
-          const msgStyle = new Discord.RichEmbed()
+          const msgStyle = new Discord.MessageEmbed()
             .setColor("RANDOM")
-            .setAuthor(msg.author.tag, msg.author.avatarURL)
-            .setDescription("Anime: Demon Slayer\nYou Got:")
-            .setImage(anime.DemonSlayerCharacters[picPicker]);
-          msg.channel.send(msgStyle);
+            .setTitle("Anime: Demon Slayer")
+            .setAuthor({ name: "You Got: " })
+            .setImage(anime.DemonSlayerCharacters[picPicker])
+            .setTimestamp();
+          msg.channel.send({ embeds: [msgStyle] });
         } catch (err) {
           msg.reply("Going too fast! Retry");
         }
@@ -44,12 +44,13 @@ module.exports = async function (msg) {
           var picPicker = Math.floor(
             Math.random() * anime.NarutoCharacters.length
           );
-          const msgStyle = new Discord.RichEmbed()
+          const msgStyle = new Discord.MessageEmbed()
             .setColor("RANDOM")
-            .setAuthor(msg.author.tag, msg.author.avatarURL)
-            .setDescription("Anime: Naruto\nYou Got:")
-            .setImage(anime.NarutoCharacters[picPicker]);
-          msg.channel.send(msgStyle);
+            .setTitle("Anime: Naruto")
+            .setAuthor({ name: "You Got: " })
+            .setImage(anime.NarutoCharacters[picPicker])
+            .setTimestamp();
+          msg.channel.send({ embeds: [msgStyle] });
         } catch (err) {
           msg.reply("Going too fast! Retry");
         }
@@ -63,11 +64,12 @@ module.exports = async function (msg) {
           var picPicker = Math.floor(
             Math.random() * anime.AOTCharacters.length
           );
-          const msgStyle = new Discord.RichEmbed()
+          const msgStyle = new Discord.MessageEmbed()
             .setColor("RANDOM")
-            .setAuthor(msg.author.tag, msg.author.avatarURL)
-            .setDescription("Anime: Attack on Titan\nYou Got:")
-            .setImage(anime.AOTCharacters[picPicker]);
+            .setTitle("Anime: Attack on Titan")
+            .setAuthor({ name: "You Got: " })
+            .setImage(anime.AOTCharacters[picPicker])
+            .setTimestamp();
           msg.channel.send(msgStyle);
         } catch (err) {
           msg.reply("Going too fast! Retry");
@@ -82,12 +84,13 @@ module.exports = async function (msg) {
           var picPicker = Math.floor(
             Math.random() * (anime.AkameGaKillCharacters.length + 1)
           );
-          const msgStyle = new Discord.RichEmbed() //testing new
+          const msgStyle = new Discord.MessageEmbed()
             .setColor("RANDOM")
-            .setAuthor(msg.author.tag, msg.author.avatarURL)
-            .setDescription("Anime: Akame Ga Kill\nYou Got:")
-            .setImage(anime.AkameGaKillCharacters[picPicker]);
-          msg.channel.send(msgStyle);
+            .setTitle("Anime: Akame Ga Kill")
+            .setAuthor({ name: "You Got: " })
+            .setImage(anime.AkameGaKillCharacters[picPicker])
+            .setTimestamp();
+          msg.channel.send({ embeds: [msgStyle] });
         } catch (err) {
           console.log(err);
           msg.reply("Going too fast! Retry");
@@ -102,12 +105,13 @@ module.exports = async function (msg) {
           var picPicker = Math.floor(
             Math.random() * (anime.JJKCharacters.length + 1)
           );
-          const msgStyle = new Discord.RichEmbed()
+          const msgStyle = new Discord.MessageEmbed()
             .setColor("RANDOM")
-            .setAuthor(msg.author.tag, msg.author.avatarURL)
-            .setDescription("Anime: Jujitsu Kaisen\nYou Got:")
-            .setImage(anime.JJKCharacters[picPicker]);
-          msg.channel.send(msgStyle);
+            .setTitle("Anime: Jujitsu Kaisen")
+            .setAuthor({ name: "You Got: " })
+            .setImage(anime.JJKCharacters[picPicker])
+            .setTimestamp();
+          msg.channel.send({ embeds: [msgStyle] });
         } catch (err) {
           msg.reply("Going too fast! Retry");
         }
