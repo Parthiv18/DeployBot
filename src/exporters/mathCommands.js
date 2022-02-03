@@ -5,8 +5,8 @@ module.exports = async function (msg) {
   if (msg.content.startsWith("-diff")) {
     var equation = msg.content.split(" ");
     if (equation.length === 2) {
-      var e = nerdamer("diff(" + equation[1] + "),x)");
-
+      var e = nerdamer('diff('+equation[1]+'),x');
+      //'diff('+equation[1]+'),x');
       const msgStyle = new Discord.MessageEmbed()
         .setColor("RANDOM")
         .setTitle("Differentiation")
