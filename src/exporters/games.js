@@ -70,7 +70,7 @@ module.exports = async function (msg) {
             .setAuthor({ name: "Anime: Attack on Titan" })
             .setImage(anime.AOTCharacters[picPicker])
             .setTimestamp();
-          msg.channel.send(msgStyle);
+          msg.channel.send({ embeds: [msgStyle] });
         } catch (err) {
           msg.reply("Going too fast! Retry");
         }
