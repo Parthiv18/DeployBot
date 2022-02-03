@@ -1,7 +1,3 @@
-const Discord = require("discord.js");
-const { AnimeWallpaper } = require("anime-wallpapers");
-const wall = new AnimeWallpaper();
-
 exports.DemonSlayerCharacters = [
   "https://i.pinimg.com/474x/0e/03/23/0e0323dcf9118ba5f596ff59558cd627.jpg",
   "https://i.pinimg.com/474x/ae/14/78/ae1478371c7105955cc703c31c1b04f7.jpg",
@@ -159,16 +155,3 @@ exports.JJKCharacters = [
   "https://i.pinimg.com/564x/39/c8/81/39c88122c6313e135f2064a6ad5caa28.jpg",
   "https://i.pinimg.com/564x/7a/bc/be/7abcbe6a01d148f696ec2417c40fdd8d.jpg",
 ]; //21
-
-module.exports = {
-  animeBackground: async function (name, msg) {
-    const wallpaper = await wall.getAnimeWall2(name);
-    const msgStyle = new Discord.MessageEmbed()
-      .setColor("RANDOM")
-      .setTitle("WallPaper: ")
-      .setAuthor({ name: name })
-      .setImage(wallpaper[0].image)
-      .setTimestamp();
-    return { embeds: [msgStyle] };
-  },
-};

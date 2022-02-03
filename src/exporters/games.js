@@ -16,17 +16,6 @@ module.exports = async function (msg) {
       msg.reply("Yes or no question");
     }
   }
-
-  //Anime WallerPaper
-  if (msg.content.startsWith("-wallpaper") || msg.content.startsWith("-wall")) {
-    var animeCharName = msg.content.split(" ");
-    if (animeCharName.length === 2) {
-      anime.animeBackground(animeCharName[1]).then((x) => msg.reply(x));
-    } else {
-      msg.reply("Cannot Comprehend");
-    }
-  }
-
   //Who am I - Anime
   if (msg.content.startsWith("-anime") || msg.content.startsWith("-Anime")) {
     var animeName = msg.content.split(" ");

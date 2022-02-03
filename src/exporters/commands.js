@@ -19,13 +19,6 @@ module.exports = async function (msg) {
 
   //kick
 
-  /*Avatar
-  if (msg.content.toUpperCase() === "-av".toUpperCase()) {
-    const UserPFP = msg.member.avatarURL();
-        msg.reply(UserPFP);
-  }
-  */
-
   //delete messages
   /*var blackList = ["YAY", "yay", "yAy", "YaY", "yAY", "Yay", "YAy"];
   for (var i = 0; i < blackList.length; i++) {
@@ -56,13 +49,13 @@ module.exports = async function (msg) {
     }
   }
 
-  //IG
-  if (msg.content.startsWith("-ig")) {
-    var igName = msg.content.split(" ");
-    if (igName.length === 2) {
-      task.findIG(igName[1]).then((x) => msg.reply(x));
+  //Anime Wallpaper
+  if (msg.content.startsWith("-wallpaper") || msg.content.startsWith("-wall")) {
+    var animeCharName = msg.content.split(" ");
+    if (animeCharName.length === 2) {
+      task.animeBackground(animeCharName[1]).then((x) => msg.reply(x));
     } else {
-      msg.reply("Cannot Find Such User");
+      msg.reply("Cannot Comprehend");
     }
   }
 };

@@ -1,5 +1,8 @@
 const Discord = require("discord.js");
 const puppeteer = require("puppeteer");
+const Discord = require("discord.js");
+const { AnimeWallpaper } = require("anime-wallpapers");
+const wall = new AnimeWallpaper();
 
 module.exports = {
   //Stocks
@@ -114,8 +117,17 @@ module.exports = {
     }
   },
 
-  //Instagram
-  findIG: async function (igName) {},
+  //Anime Background
+  animeBackground: async function (name, msg) {
+    const wallpaper = await wall.getAnimeWall2(name);
+    const msgStyle = new Discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setTitle("WallPaper: ")
+      .setAuthor({ name: name })
+      .setImage(wallpaper[0].image)
+      .setTimestamp();
+    return { embeds: [msgStyle] };
+  },
 
   //something
 };
