@@ -18,7 +18,7 @@ module.exports = async function (msg) {
   }
 
   //Anime WallerPaper
-  if (msg.content.startsWith("-wall")) {
+  if (msg.content.startsWith("-wallpaper") || msg.content.startsWith("-wall")) {
     var animeCharName = msg.content.split(" ");
     if (animeCharName.length === 2) {
       anime.animeBackground(animeCharName[1]).then((x) => msg.reply(x));
