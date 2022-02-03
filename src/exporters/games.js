@@ -10,7 +10,7 @@ module.exports = async function (msg) {
     if (ball.length > 1) {
       const msgStyle = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .addField("8ball Reply: ", components.ballReplies[num], true)
+        .addField("8ball Reply: ", components.ballReplies[num], true);
       msg.channel.send({ embeds: [msgStyle] });
     } else if (ball.length <= 1) {
       msg.reply("Yes or no question");
@@ -29,8 +29,8 @@ module.exports = async function (msg) {
           );
           const msgStyle = new Discord.MessageEmbed()
             .setColor("RANDOM")
-            .setTitle("Anime: Demon Slayer")
-            .setAuthor({ name: "You Got: " })
+            .setTitle("You Got: ")
+            .setAuthor({ name: "Anime: Demon Slayer" })
             .setImage(anime.DemonSlayerCharacters[picPicker])
             .setTimestamp();
           msg.channel.send({ embeds: [msgStyle] });
@@ -46,8 +46,8 @@ module.exports = async function (msg) {
           );
           const msgStyle = new Discord.MessageEmbed()
             .setColor("RANDOM")
-            .setTitle("Anime: Naruto")
-            .setAuthor({ name: "You Got: " })
+            .setTitle("You Got: ")
+            .setAuthor({ name: "Anime: Naruto" })
             .setImage(anime.NarutoCharacters[picPicker])
             .setTimestamp();
           msg.channel.send({ embeds: [msgStyle] });
@@ -66,8 +66,8 @@ module.exports = async function (msg) {
           );
           const msgStyle = new Discord.MessageEmbed()
             .setColor("RANDOM")
-            .setTitle("Anime: Attack on Titan")
-            .setAuthor({ name: "You Got: " })
+            .setTitle("You Got: ")
+            .setAuthor({ name: "Anime: Attack on Titan" })
             .setImage(anime.AOTCharacters[picPicker])
             .setTimestamp();
           msg.channel.send(msgStyle);
@@ -86,8 +86,8 @@ module.exports = async function (msg) {
           );
           const msgStyle = new Discord.MessageEmbed()
             .setColor("RANDOM")
-            .setTitle("Anime: Akame Ga Kill")
-            .setAuthor({ name: "You Got: " })
+            .setTitle("You Got: ")
+            .setAuthor({ name: "Anime: Akame Ga Kill" })
             .setImage(anime.AkameGaKillCharacters[picPicker])
             .setTimestamp();
           msg.channel.send({ embeds: [msgStyle] });
@@ -107,8 +107,8 @@ module.exports = async function (msg) {
           );
           const msgStyle = new Discord.MessageEmbed()
             .setColor("RANDOM")
-            .setTitle("Anime: Jujitsu Kaisen")
-            .setAuthor({ name: "You Got: " })
+            .setTitle("You Got: ")
+            .setAuthor({ name: "Anime: Jujitsu Kaisen" })
             .setImage(anime.JJKCharacters[picPicker])
             .setTimestamp();
           msg.channel.send({ embeds: [msgStyle] });

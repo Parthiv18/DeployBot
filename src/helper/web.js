@@ -42,7 +42,6 @@ module.exports = {
 
       const msgStyle = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .setTitle("Stock Market")
         .setAuthor({ name: stockName })
         .setThumbnail(stockPic)
         .addFields(
@@ -99,7 +98,6 @@ module.exports = {
 
       const msgStyle = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .setTitle("Crypto")
         .setAuthor({ name: cryptoName })
         .setThumbnail(cryptoPic)
         .addFields(
