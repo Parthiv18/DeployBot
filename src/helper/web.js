@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const puppeteer = require("puppeteer");
-const Discord = require("discord.js");
 const { AnimeWallpaper } = require("anime-wallpapers");
 const wall = new AnimeWallpaper();
 
