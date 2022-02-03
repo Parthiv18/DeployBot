@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 require("dotenv").config();
 const TOKEN = process.env.TOKEN;
 
-//calling paths
+// calling paths
 const commandHandler = require("./exporters/commands");
 const gameHandler = require("./exporters/games");
 
