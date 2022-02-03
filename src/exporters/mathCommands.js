@@ -30,7 +30,7 @@ module.exports = async function (msg) {
         //'('integrate(10*q/(4*x^2+24*x+20), x)')
         const msgStyle = new Discord.MessageEmbed()
           .setColor("RANDOM")
-          .setTitle("Integration- Under Progress")
+          .setTitle("Integration - Under Progress")
           .addField("Output: ", intCalc.text(), true)
           .setTimestamp();
         msg.channel.send({ embeds: [msgStyle] });
@@ -51,7 +51,7 @@ module.exports = async function (msg) {
         //('defint(e^(cos(x)), 1, 2)');
         const msgStyle = new Discord.MessageEmbed()
           .setColor("RANDOM")
-          .setTitle("Definite Integration- Under Progress")
+          .setTitle("Definite Integration - Under Progress")
           .addField("Output: ", defintCalc.text(), true)
           .setTimestamp();
         msg.channel.send({ embeds: [msgStyle] });
