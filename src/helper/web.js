@@ -118,15 +118,18 @@ module.exports = {
 
   //Anime Background
   animeBackground: async function (name, msg) {
-    const wallpaper = await wall.getAnimeWall2(name);
-    const msgStyle = new Discord.MessageEmbed()
-      .setColor("RANDOM")
-      .setTitle("WallPaper: ")
-      .setAuthor({ name: name })
-      .setImage(wallpaper[0].image)
-      .setTimestamp();
-    return { embeds: [msgStyle] };
+    try {
+      const wallpaper = await wall.getAnimeWall2(name);
+      const msgStyle = new Discord.MessageEmbed()
+        .setColor("RANDOM")
+        .setTitle("WallPaper: ")
+        .setAuthor({ name: name })
+        .setImage(wallpaper[0].image)
+        .setTimestamp();
+      return { embeds: [msgStyle] };
+    } catch (err) {
+      return "Sorry Couldn't Find That!"
+    }
   },
-
   //something
 };

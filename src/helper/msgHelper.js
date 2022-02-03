@@ -22,5 +22,5 @@ var helpMsg =
   "**Definite Integration:**\n" +
   'Type "-defint" followed with equation lowerbound upperbound\n' +
   "**Looking for a new WallPaper?:**\n" +
-  'Type "-wall or -wallpaper" followed with name';
+  'Type "-wall" followed with name';
 exports.helpMsg = helpMsg;
