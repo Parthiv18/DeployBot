@@ -13,6 +13,7 @@
   "dependencies": {
     "anime-wallpapers": "^1.0.1",
     "axios": "^0.25.0",
+    "discord-clicking-game": "^0.0.2",
     "discord.js": "^13.6.0",
     "dotenv": "^8.2.0",
     "klaymon": "^3.3.1",

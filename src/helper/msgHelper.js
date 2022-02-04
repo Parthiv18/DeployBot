@@ -22,7 +22,9 @@ var helpMsg =
   "**Definite Integration:**\n" +
   'Type "-defint" followed with equation lowerbound upperbound\n' +
   "**Looking for a new WallPaper?:**\n" +
-  'Type "-wall" followed with name' +
+  'Type "-wall" followed with name\n' +
   "**Tic Tac Toe:**\n" +
-  'Type "-ttt" followed by tagging user [Person name bolded is there turn]\n';
+  'Type "-ttt" followed by tagging user [Person name bolded is there turn]\n' +
+  "**Clicking Game:**\n" +
+  'Type "-click" first person to click the emoji wins!\n';
 exports.helpMsg = helpMsg;

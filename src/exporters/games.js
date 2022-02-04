@@ -3,6 +3,7 @@ const { TicTacToe } = require("klaymon");
 const axios = require("axios");
 const anime = require("../helper/pics");
 const components = require("../helper/msgHelper");
+const click = require("discord-clicking-game");
 
 module.exports = async function (msg) {
   //New 8ball
@@ -148,5 +149,22 @@ module.exports = async function (msg) {
       fightEmoji: "🥋", // Emoji in the embed / DEFAULT: 🎮
     });
   }
+
+  //Clicking Game
+  if (msg.content.startsWith("-click")) {
+    const game = new click(
+      "🎈", // Emoji to use on correct button
+      1000 || "random", // Time in which game starts after the ready message
+      1000, // Time in which game auto ends , NOTE time should be in Milleseconds
+      {
+        win: "{winner} won in {time}", // winning messages
+        loose: "Too Slow", // Game end message when no one clicks
+        started: "Game Starting Everyone Get Ready", // Game started message
+        ready: "Starting Soon First Person To Click WINS!", // Ready message
+      }
+    );
+    game.party(msg);
+  }
+
   //Other
 };
