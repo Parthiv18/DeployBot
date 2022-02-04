@@ -1,4 +1,6 @@
 const Discord = require("discord.js");
+const { TicTacToe } = require("klaymon");
+const axios = require("axios");
 const anime = require("../helper/pics");
 const components = require("../helper/msgHelper");
 
@@ -126,6 +128,25 @@ module.exports = async function (msg) {
         "Cannot Comprehend Anime! [Try without spaces], [Adding that anime soon!]"
       );
     }
+  }
+
+  //Tic Tac Toe
+  if (msg.content.startsWith("-ttt")) {
+    const opponent = msg.mentions.users.first();
+    if (!opponent) return msg.reply(`You must tag a user!`);
+    await TicTacToe({
+      message: msg, // Message Parameter
+      opponent: opponent, // Opponent Parameter
+      xColor: "DANGER", // X Buttons color / DEFAULT: DANGER
+      oColor: "SUCCESS", // O Buttons color / DEFAULT: SUCCESS
+      xEmoji: "❌", // X Emoji // DEFAULT ❌
+      oEmoji: "⭕", // O Emoji // DEFAULT ⭕
+      embed: {
+        color: "BLACK", // Embed color / DEFAULT RANDOM
+      },
+      fightBot: "YOU CANT FIGHT A BOT!", // If the user tries to fight a bot / DEFAULT: "Awww, You can't fight a bot!"
+      fightEmoji: "🥋", // Emoji in the embed / DEFAULT: 🎮
+    });
   }
 
   //Other
