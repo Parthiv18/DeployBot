@@ -148,6 +148,5 @@ module.exports = async function (msg) {
       fightEmoji: "🥋", // Emoji in the embed / DEFAULT: 🎮
     });
   }
-
   //Other
 };
