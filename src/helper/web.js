@@ -128,8 +128,48 @@ module.exports = {
         .setTimestamp();
       return { embeds: [msgStyle] };
     } catch (err) {
-      return "Sorry Couldn't Find That!"
+      return "Sorry Couldn't Find That!";
     }
   },
   //something
+
+  getIntegration: async function (name) {
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ["--no-sandbox"],
+    });
+    try {
+      const page = await browser.newPage();
+      await page.goto(
+        "https://quickmath.com/webMathematica3/quickmath/calculus/integrate/advanced.jsp#c=integrate_integrateadvanced&v1=" +
+          name +
+          "&v2=x",
+        {
+          timeout: 0,
+          waitUntil: "networkidle0",
+        }
+      );
+      const [getCryptoPic] = await page.$x(
+        "/html/body/div[1]/div[2]/div/div[2]/div/div[2]/div[1]/div[3]/table/tbody/tr/td/table/tbody/tr/td/p[4]/span/img"
+      );
+
+      //2nd way
+
+      const storeGetCryptoPic = await getCryptoPic.getProperty("src");
+      const cryptoPic = await storeGetCryptoPic.jsonValue();
+
+      const msgStyle = new Discord.MessageEmbed()
+        .setColor("RANDOM")
+        .setTitle("Output: ")
+        .setAuthor({ name: "Integration -> [sin^5(x) not work => sin(x)*...sin(x) works]" })
+        .setImage(cryptoPic)
+        .setTimestamp();
+      return { embeds: [msgStyle] };
+    } catch (err) {
+      console.error(err.message);
+      return "error";
+    } finally {
+      await browser.close();
+    }
+  },
 };

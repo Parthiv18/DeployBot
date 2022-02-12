@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const nerdamer = require("nerdamer/all.min");
+const task = require("../helper/web");
 
 module.exports = async function (msg) {
   //Differentiation
@@ -22,7 +23,7 @@ module.exports = async function (msg) {
   }
 
   //Integration
-  if (msg.content.startsWith("-int")) {
+  /*if (msg.content.startsWith("-int")) {
     var equation = msg.content.split(" ");
     if (equation.length === 2) {
       try {
@@ -38,6 +39,36 @@ module.exports = async function (msg) {
         msg.reply("Format [-int equation]");
       }
     }
+  }*/
+
+  //Integration [new]
+  if (msg.content.startsWith("-int")) {
+    /*      
+      + => %2B (value)
+
+      intput x^2-3
+      x%255E2-3&v2=x
+      input x^2+3
+      x%255E2%2B3
+      input x/3
+      x%2F3
+      input x*3
+      x*3
+    */
+    var inputText = msg.content.split(" ");
+    //test is gone
+    var fullName = inputText.slice(1).join(" ");
+    //replace brackets
+    var output = fullName
+      .replace(/\(/g, "%2528")
+      .replace(/\)/g, "%2529")
+      .replace(/\^/g, "%255E")
+      .replace(/\+/g, "%2B")
+      .replace(/\//g, "%2F")
+      .replace(/\//g, "%2F"); //tan%2528x%2529
+
+    //console.log("works");
+    task.getIntegration(output).then((x) => msg.reply(x));
   }
 
   //Definite Integration
