@@ -160,7 +160,7 @@ module.exports = {
 
       const msgStyle = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .setTitle("Output: ")
+        .setTitle("Output [Ignore pi to 2pi]: ")
         .setAuthor({ name: "Integration -> [sin^5(x) not work => sin(x)*...sin(x) works]" })
         .setImage(cryptoPic)
         .setTimestamp();
