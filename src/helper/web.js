@@ -133,7 +133,7 @@ module.exports = {
   },
   //something
 
-  getIntegration: async function (name) {
+  findIntegration: async function (name) {
     const browser = await puppeteer.launch({
       headless: true,
       args: ["--no-sandbox"],
@@ -149,14 +149,14 @@ module.exports = {
           waitUntil: "networkidle0",
         }
       );
-      const [getCryptoPic] = await page.$x(
+      const [getIntegral] = await page.$x(
         "/html/body/div[1]/div[2]/div/div[2]/div/div[2]/div[1]/div[3]/table/tbody/tr/td/table/tbody/tr/td/p[4]/span/img"
       );
 
       //2nd way
 
-      const storeGetCryptoPic = await getCryptoPic.getProperty("src");
-      const cryptoPic = await storeGetCryptoPic.jsonValue();
+      const storeGetIntegral = await getIntegral.getProperty("src");
+      const integral = await storeGetIntegral.jsonValue();
 
       const msgStyle = new Discord.MessageEmbed()
         .setColor("RANDOM")
@@ -164,7 +164,7 @@ module.exports = {
         .setAuthor({
           name: "Integration -> [sin^5(x) does not work => sin(x)*...sin(x) works]",
         })
-        .setImage(cryptoPic)
+        .setImage(integral)
         .setTimestamp();
       return { embeds: [msgStyle] };
     } catch (err) {
@@ -174,4 +174,85 @@ module.exports = {
       await browser.close();
     }
   },
+
+  findDerivative: async function (name) {
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ["--no-sandbox"],
+    });
+    try {
+      const page = await browser.newPage();
+      await page.goto(
+        "https://quickmath.com/webMathematica3/quickmath/calculus/differentiate/basic.jsp#c=differentiate_differentiatebasic&v1=" +
+          name +
+          "&v2=x",
+        {
+          timeout: 0,
+          waitUntil: "networkidle0",
+        }
+      );
+      const [getDerivative] = await page.$x(
+        "/html/body/div[1]/div[2]/div/div[2]/div/div[2]/div[1]/div[3]/table/tbody/tr/td/table/tbody/tr/td/p[4]/span/img"
+      );
+
+      //2nd way
+      const storeDerivative = await getDerivative.getProperty("src");
+      const derivative = await storeDerivative.jsonValue();
+
+      const msgStyle = new Discord.MessageEmbed()
+        .setColor("RANDOM")
+        //.setTitle("Output: " + derivative)
+        .setAuthor({
+          name: "Derivative",
+        })
+        .setImage(derivative)
+        .setTimestamp();
+      return { embeds: [msgStyle] };
+    } catch (err) {
+      console.error(err.message);
+      return "error";
+    } finally {
+      await browser.close();
+    }
+  },
+
+  /*findDiff: async function (name) {
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ["--no-sandbox"],
+    });
+    try {
+      const page = await browser.newPage();
+      await page.goto(
+        "https://www.wolframalpha.com/input?i2d=true&i=y%27%3D3x%2BPower%5Be%2Cx%5" +
+          name,
+        {
+          timeout: 0,
+          waitUntil: "networkidle0",
+        }
+      );
+      const [getDiff] = await page.$x(
+        "/html/body/div/div/div[1]/main/div[2]/div[2]/div[2]/section/section[6]/div/div[2]/section/section/div/img"
+      );
+
+      //2nd way
+      const storeDiff = await getDiff.getProperty("img");
+      const diff = await storeDiff.jsonValue();
+
+      const msgStyle = new Discord.MessageEmbed()
+        .setColor("RANDOM")
+        .setTitle("Output: ")
+        .setAuthor({
+          name: "Diff",
+        })
+        .setImage(diff)
+        .setTimestamp();
+      return { embeds: [msgStyle] };
+    } catch (err) {
+      console.error(err.message);
+      return "error";
+    } finally {
+      await browser.close();
+    }
+  },*/
 };
