@@ -27,6 +27,6 @@ var helpMsg =
   'Type "-ttt" followed by tagging user [Person name bolded is there turn]\n' +
   "**Clicking Game:**\n" +
   'Type "-click" first person to click the emoji wins!\n' +
-  "**Want to fight someone?:**\n" +
+  "**Want to fight someone? - Under Progress:**\n" +
   'Type "-fight" followed by the perosn you want fight!\n';
 exports.helpMsg = helpMsg;

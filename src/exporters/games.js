@@ -167,7 +167,7 @@ module.exports = async function (msg) {
   }
 
   //Fighting game
-  if (msg.content.startsWith("-fight")) {
+  /*if (msg.content.startsWith("-fight")) {
     const user = msg.author.username;
     const person = msg.mentions.members.first().id;
 
@@ -358,7 +358,7 @@ module.exports = async function (msg) {
       else if (msg.author.id === person && msg.content.toLowerCase() == "no") {
           msg.channel.send(`<@${person}>` + " backed out L");
       }
-    });
+    });*/
 
     //Other
   }
