@@ -358,8 +358,8 @@ module.exports = async function (msg) {
       else if (msg.author.id === person && msg.content.toLowerCase() == "no") {
           msg.channel.send(`<@${person}>` + " backed out L");
       }
-    });*/
+    });    
+  }*/
 
-    //Other
-  }
+  //Other
 };
