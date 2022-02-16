@@ -34,6 +34,4 @@ module.exports = async function (msg) {
       .replace(/\//g, "%2F");
     task.findIntegration(output).then((x) => msg.reply(x));
   }
-
-  //diff - in progress 
 };

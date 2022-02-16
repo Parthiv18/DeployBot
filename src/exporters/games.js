@@ -166,5 +166,200 @@ module.exports = async function (msg) {
     game.party(msg);
   }
 
-  //Other
+  //Fighting game
+  if (msg.content.startsWith("-fight")) {
+    const user = msg.author.username;
+    const person = msg.mentions.members.first().id;
+
+    //accpet or deny msg
+    msg.channel.send(`<@${person}>` + " wanna fight?\n `Yes` or `No`");
+
+    //collect msg  => check if they replied
+    const collector = new Discord.MessageCollector(
+      msg.channel,
+      (m) => m.author.id === person,
+      { time: 10000 }
+    ); // <--- Line edited
+
+    collector.on("collect", (msg) => {
+      if (msg.author.id === person && msg.content.toLowerCase() == "yes") {
+        msg.channel.send(`<@${person}>` + " **Choose: Attack or Defend**");
+
+        const defMoves = ["block", "counter punch", "Elbow strike"];
+        const offMoves = ["punch", "kick", "360 kick", "Throat punch", "headlock", "uppercut"];
+        var def = Math.floor(Math.random() * defMoves.length);
+        var off = Math.floor(Math.random() * offMoves.length);        
+        var userHealth = 100;
+        var personHealth = 100;
+
+        collector.on("collect", (msg) => {
+          if (msg.author.id === person && msg.content.toLowerCase() == "attack") {
+            var damage = Math.floor(Math.random() * 100) + 1;
+            userHealth -= damage;
+            if (userHealth <= 0) {
+              const msgStyle = new Discord.MessageEmbed()
+                    .setColor("RANDOM")
+                    .addField(user+ " **WAS KILLED**", "Damage inflicted: " + damage + "\n" + user + " **Health**: " + userHealth + "/100", true);
+              msg.reply({ embeds: [msgStyle] });
+              //msg.channel.send(user + " **LOST**");
+            }
+            else if (personHealth <= 0) {
+              const msgStyle = new Discord.MessageEmbed()
+                    .setColor("RANDOM")
+                    .addField(`<@${person}>`+ " **WAS KILLED**", "Damage inflicted: " + damage + "\n" + `<@${person}>` + " **Health**: " + personHealth + "/100", true);
+              msg.reply({ embeds: [msgStyle] });
+              //msg.channel.send(`<@${person}>` + " **LOST**");
+            } 
+            else {
+              //userHealth -= damage;
+              const msgStyle = new Discord.MessageEmbed()
+                    .setColor("RANDOM")
+                    .addField("Result: ", `<@${person}>` + " used: " + offMoves[off] + "\nDamage inflicted: " + damage + "\n" + user + " **Health**: " + userHealth + "/100", true);
+              msg.reply({ embeds: [msgStyle] });
+              msg.channel.send(user + " **Choose: Battle or Guard**");              
+            }            
+            collector.on("collect", (msg) => {
+              if (msg.author.username === user && msg.content.toLowerCase() == "battle") {
+                var damage = Math.floor(Math.random() * 100) + 1;
+                personHealth -= damage;
+                
+                if (userHealth <= 0) {
+                  const msgStyle = new Discord.MessageEmbed()
+                        .setColor("RANDOM")
+                        .addField(user+ " **WAS KILLED**", "Damage inflicted: " + damage + "\n" + user + " **Health**: " + userHealth + "/100", true);
+                  msg.reply({ embeds: [msgStyle] });
+                  //msg.channel.send(user + " **LOST**");
+                }
+                else if (personHealth <= 0) {
+                  const msgStyle = new Discord.MessageEmbed()
+                        .setColor("RANDOM")
+                        .addField(`<@${person}>`+ " **WAS KILLED**", "Damage inflicted: " + damage + "\n" + `<@${person}>` + " **Health**: " + personHealth + "/100", true);
+                  msg.reply({ embeds: [msgStyle] });
+                  //msg.channel.send(`<@${person}>` + " **LOST**");
+                } 
+                else {
+                  const msgStyle = new Discord.MessageEmbed()
+                      .setColor("RANDOM")
+                      .addField("Result: ", user + " used: " + offMoves[off] + "\nDamage inflicted: " + damage + "\n" + `<@${person}>` + " **Health**: " + personHealth + "/100", true);
+                  msg.reply({ embeds: [msgStyle] });
+                  msg.channel.send(`<@${person}>` + " **Choose: Attack or Defend**");                 
+                }                
+              }
+              else if (msg.author.username === user && msg.content.toLowerCase() == "guard") {
+                var damage = Math.floor(Math.random() * 100) + 1;
+                personHealth -= damage;
+                
+                if (userHealth <= 0) {
+                  const msgStyle = new Discord.MessageEmbed()
+                        .setColor("RANDOM")
+                        .addField(user+ " **WAS KILLED**", "Damage inflicted: " + damage + "\n" + user + " **Health**: " + userHealth + "/100", true);
+                  msg.reply({ embeds: [msgStyle] });
+                  //msg.channel.send(user + " **LOST**");
+                }
+                else if (personHealth <= 0) {
+                  const msgStyle = new Discord.MessageEmbed()
+                        .setColor("RANDOM")
+                        .addField(`<@${person}>`+ " **WAS KILLED**", "Damage inflicted: " + damage + "\n" + `<@${person}>` + " **Health**: " + personHealth + "/100", true);
+                  msg.reply({ embeds: [msgStyle] });
+                  //msg.channel.send(`<@${person}>` + " **LOST**");
+                }  
+                else {
+                  const msgStyle = new Discord.MessageEmbed()
+                      .setColor("RANDOM")
+                      .addField("Result: ", user + " used: " + defMoves[def] + "\nDamage inflicted: " + damage + "\n" + `<@${person}>` + " **Health**: " + personHealth + "/100", true);
+                  msg.reply({ embeds: [msgStyle] });
+                  msg.channel.send(`<@${person}>` + " **Choose: Attack or Defend**");                  
+                }                
+              }               
+            });            
+          }
+          else if (msg.author.id === person && msg.content.toLowerCase() == "defend") {
+            var damage = Math.floor(Math.random() * 100) + 1;
+            userHealth -= damage;
+            if (userHealth <= 0) {
+              const msgStyle = new Discord.MessageEmbed()
+                    .setColor("RANDOM")
+                    .addField(user+ " **WAS KILLED**", "Damage inflicted: " + damage + "\n" + user + " **Health**: " + userHealth + "/100", true);
+              msg.reply({ embeds: [msgStyle] });
+              //msg.channel.send(user + " **LOST**");
+            }
+            else if (personHealth <= 0) {
+              const msgStyle = new Discord.MessageEmbed()
+                    .setColor("RANDOM")
+                    .addField(`<@${person}>`+ " **WAS KILLED**", "Damage inflicted: " + damage + "\n" + `<@${person}>` + " **Health**: " + personHealth + "/100", true);
+              msg.reply({ embeds: [msgStyle] });
+              //msg.channel.send(`<@${person}>` + " **LOST**");
+            }  
+            else {
+              //userHealth -= damage;
+              const msgStyle = new Discord.MessageEmbed()
+                    .setColor("RANDOM")
+                    .addField("Result: ", `<@${person}>` + " used: " + defMoves[def] + "\nDamage inflicted: " + damage + "\n" + user + " **Health**: " + userHealth + "/100", true);
+              msg.reply({ embeds: [msgStyle] });
+              msg.channel.send(user + " **Choose: Battle or Guard**");              
+            }            
+            collector.on("collect", (msg) => {
+              if (msg.author.username === user && msg.content.toLowerCase() == "battle") {
+                var damage = Math.floor(Math.random() * 100) + 1;
+                personHealth -= damage;
+                
+                if (userHealth <= 0) {
+                  const msgStyle = new Discord.MessageEmbed()
+                        .setColor("RANDOM")
+                        .addField(user+ " **WAS KILLED**", "Damage inflicted: " + damage + "\n" + user + " **Health**: " + userHealth + "/100", true);
+                  msg.reply({ embeds: [msgStyle] });
+                  //msg.channel.send(user + " **LOST**");
+                }
+                else if (personHealth <= 0) {
+                  const msgStyle = new Discord.MessageEmbed()
+                        .setColor("RANDOM")
+                        .addField(`<@${person}>`+ " **WAS KILLED**", "Damage inflicted: " + damage + "\n" + `<@${person}>` + " **Health**: " + personHealth + "/100", true);
+                  msg.reply({ embeds: [msgStyle] });
+                  //msg.channel.send(`<@${person}>` + " **LOST**");
+                } 
+                else {
+                  const msgStyle = new Discord.MessageEmbed()
+                      .setColor("RANDOM")
+                      .addField("Result: ", user + " used: " + offMoves[off] + "\nDamage inflicted: " + damage + "\n" + `<@${person}>` + " **Health**: " + personHealth + "/100", true);
+                  msg.reply({ embeds: [msgStyle] });
+                  msg.channel.send(`<@${person}>` + " **Choose: Attack or Defend**");                                    
+                }                                
+              }
+              else if (msg.author.username === user && msg.content.toLowerCase() == "guard") {
+                var damage = Math.floor(Math.random() * 100) + 1;
+                personHealth -= damage;
+
+                if (userHealth <= 0) {
+                  const msgStyle = new Discord.MessageEmbed()
+                        .setColor("RANDOM")
+                        .addField(user+ " **WAS KILLED**", "Damage inflicted: " + damage + "\n" + user + " **Health**: " + userHealth + "/100", true);
+                  msg.reply({ embeds: [msgStyle] });
+                  //msg.channel.send(user + " **LOST**");
+                }
+                else if (personHealth <= 0) {
+                  const msgStyle = new Discord.MessageEmbed()
+                        .setColor("RANDOM")
+                        .addField(`<@${person}>`+ " **WAS KILLED**", "Damage inflicted: " + damage + "\n" + `<@${person}>` + " **Health**: " + personHealth + "/100", true);
+                  msg.reply({ embeds: [msgStyle] });
+                  //msg.channel.send(`<@${person}>` + " **LOST**");
+                } 
+                else {
+                  const msgStyle = new Discord.MessageEmbed()
+                      .setColor("RANDOM")
+                      .addField("Result: ", user + " used: " + defMoves[def] + "\nDamage inflicted: " + damage + "\n" + `<@${person}>` + " **Health**: " + personHealth + "/100", true);
+                  msg.reply({ embeds: [msgStyle] });
+                  msg.channel.send(`<@${person}>` + " **Choose: Attack or Defend**");                  
+                }                
+              }                        
+            });          
+          }                                                
+        });
+      }
+      else if (msg.author.id === person && msg.content.toLowerCase() == "no") {
+          msg.channel.send(`<@${person}>` + " backed out L");
+      }
+    });
+
+    //Other
+  }
 };
