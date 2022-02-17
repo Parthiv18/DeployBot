@@ -200,7 +200,7 @@ module.exports = async function (msg) {
           if (msg.author.id === enemy && msg.content.toLowerCase() == "attack") {
             var def = Math.floor(Math.random() * defMoves.length);
             var off = Math.floor(Math.random() * offMoves.length); //work on this to randomize
-            var damage = Math.floor(Math.random() * 100) + 70;
+            var damage = Math.floor(Math.random() * (100 - 50 + 1) ) + 50;
             userHealth -= damage;             
               const msgStyle = new Discord.MessageEmbed()
                     .setColor("DARK_RED")
@@ -211,7 +211,7 @@ module.exports = async function (msg) {
               //now user turn to fight back
               collector1.on("collect", (msg) => {
                 if (msg.author.username === user && msg.content.toLowerCase() == "battle") {
-                  var damage = Math.floor(Math.random() * 100) + 70;
+                  var damage = Math.floor(Math.random() * (100 - 50 + 1) ) + 50;
                   enemyHealth -= damage; 
                   //if both are alive
                   const msgStyle = new Discord.MessageEmbed()
@@ -222,7 +222,7 @@ module.exports = async function (msg) {
                  
                 }
                 else if (msg.author.username === user && msg.content.toLowerCase() == "guard") {
-                  var damage = Math.floor(Math.random() * 100) + 70;
+                  var damage = Math.floor(Math.random() * (100 - 50 + 1) ) + 50;
                   enemyHealth -= damage; 
                   //if both are alive
                   const msgStyle = new Discord.MessageEmbed()
@@ -236,7 +236,7 @@ module.exports = async function (msg) {
           else if (msg.author.id === enemy && msg.content.toLowerCase() == "defend") {
             var def = Math.floor(Math.random() * defMoves.length);
             var off = Math.floor(Math.random() * offMoves.length); //work on this to randomize
-            var damage = Math.floor(Math.random() * 100) + 70;
+            var damage = Math.floor(Math.random() * (100 - 50 + 1) ) + 50;
             userHealth -= damage;             
               const msgStyle = new Discord.MessageEmbed()
                     .setColor("DARK_RED")
@@ -247,7 +247,7 @@ module.exports = async function (msg) {
               //now user turn to fight back
               collector1.on("collect", (msg) => {
                 if (msg.author.username === user && msg.content.toLowerCase() == "battle") {
-                  var damage = Math.floor(Math.random() * 100) + 70;
+                  var damage = Math.floor(Math.random() * (100 - 50 + 1) ) + 50;
                   enemyHealth -= damage; 
                   //if both are alive
                   const msgStyle = new Discord.MessageEmbed()
@@ -258,7 +258,7 @@ module.exports = async function (msg) {
                  
                 }
                 else if (msg.author.username === user && msg.content.toLowerCase() == "guard") {
-                  var damage = Math.floor(Math.random() * 100) + 70;
+                  var damage = Math.floor(Math.random() * (100 - 50 + 1) ) + 50;
                   enemyHealth -= damage; 
                   //if both are alive
                   const msgStyle = new Discord.MessageEmbed()
