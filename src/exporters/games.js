@@ -209,9 +209,10 @@ module.exports = async function (msg) {
           //console.log('error:', error);
           //console.log('statusCode:', response && response.statusCode);
           //console.log('body:', body.output);
+          var codeOutput = body.output.toString();
           const msgStyle = new Discord.MessageEmbed()
               .setColor("RANDOM")
-              .setDescription("Output (dont add scanf here/add space after your coding language): \n" + body.output);
+              .setDescription("Output (dont add scanf here/**add space after your coding language**): \n" + codeOutput);
             msg.reply({ embeds: [msgStyle] });
       });      
     } 
