@@ -181,8 +181,8 @@ module.exports = async function (msg) {
         language = "python3";
       }
 
-      var newInput = input.slice(1);
-      var finalInput = newInput.slice(1).join(" "); //nothing left
+      var newInput = input.slice(1);      
+      var finalInput = " " + newInput.slice(1).join(" "); //nothing left
 
       var code = "";
       for (var i=0; i<finalInput.length;i++) {
@@ -206,8 +206,8 @@ module.exports = async function (msg) {
         json: program
       },
       function (error, response, body) {
-          console.log('error:', error);
-          console.log('statusCode:', response && response.statusCode);
+          //console.log('error:', error);
+          //console.log('statusCode:', response && response.statusCode);
           //console.log('body:', body.output);
           const msgStyle = new Discord.MessageEmbed()
               .setColor("RANDOM")
