@@ -185,8 +185,13 @@ module.exports = async function (msg) {
       var finalInput = newInput.slice(1).join(" "); //nothing left
 
       var code = "";
-      for (var i=0; i<finalInput.length;i++)
-        code += finalInput[i];      
+      for (var i=0; i<finalInput.length;i++) {
+        code += finalInput[i];
+        if (finalInput[i] == "scanf") {
+          msg.reply("PLEASE NO SCANF HERE")
+        }
+      }
+        
       
       var program = {
         script: code,
@@ -206,8 +211,7 @@ module.exports = async function (msg) {
           //console.log('body:', body.output);
           const msgStyle = new Discord.MessageEmbed()
               .setColor("RANDOM")
-              .setTitle("Input: " + code)
-              .setDescription("Output: " + body.output);
+              .setDescription("Output (dont add scanf here/add space after your coding language): \n" + body.output);
             msg.reply({ embeds: [msgStyle] });
       });      
     } 
