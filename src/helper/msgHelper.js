@@ -3,8 +3,10 @@ exports.ballReplies = [
   "As I see it, yes!",
   "Please stfu",
   "It is decidedly so!",
-  "Don't count on it!",
+  "nah",
   "My sources say no",
+  "yes",
+  "as long as your happy",
 ];
 var helpMsg =
   "**Anime games:**\n" +
