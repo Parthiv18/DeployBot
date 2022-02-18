@@ -18,6 +18,12 @@ bot.on("ready", () => {
   console.info(`Logged in as ${bot.user.tag}!`);
 });
 
+/*bot.on("ready", () => {
+  bot.guilds.cache.forEach(guild => {
+    console.log(`${guild.name} | ${guild.id}`);
+  })
+}); //all server bot is in*/ 
+
 bot.on("message", commandHandler);
 bot.on("message", gameHandler);
 bot.on("message", mathHandler);

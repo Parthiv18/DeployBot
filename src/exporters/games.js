@@ -210,10 +210,26 @@ module.exports = async function (msg) {
           //console.log('error:', error);
           //console.log('statusCode:', response && response.statusCode);
           //console.log('body:', body.output);
-          const msgStyle = new Discord.MessageEmbed()
+          var letters = 0;
+          var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+          var ar = alphabet.split("");
+          for (var i=0; i<body.output.length;i++) {
+            if (ar.indexOf(body.output[i]) > -1) {
+            letters = letters + 1;
+          }
+        }
+          if (letters > 5000) {
+            const msgStyle = new Discord.MessageEmbed()
               .setColor("RANDOM")
-              .setDescription("Output **(-help for more info)**: \n" + body.output);
+              .setDescription("Output **(-help for more info):** \n Code looks right\nCasues of error: [logic error], [bot cannot handle output due to length]");
             msg.reply({ embeds: [msgStyle] });
+          }
+          else { 
+            const msgStyle = new Discord.MessageEmbed()
+              .setColor("RANDOM")
+              .setDescription("Output **(-help for more info):** \n" + body.output);
+            msg.reply({ embeds: [msgStyle] });
+          }          
       });      
     } 
     catch (err) {
