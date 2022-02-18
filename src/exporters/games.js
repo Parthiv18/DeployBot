@@ -190,10 +190,9 @@ module.exports = async function (msg) {
         if (finalInput[i] == "scanf") {
           msg.reply("PLEASE NO SCANF HERE")
         }
-        console.log(finalInput[i]);
+        //console.log(finalInput[i]);
       }
         
-      
       var program = {
         script: code,
         language: language,
