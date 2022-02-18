@@ -4,6 +4,8 @@ const axios = require("axios");
 const anime = require("../helper/pics");
 const components = require("../helper/msgHelper");
 const click = require("discord-clicking-game");
+require("dotenv").config();
+const request = require('request');
 
 
 module.exports = async function (msg) {
@@ -166,6 +168,54 @@ module.exports = async function (msg) {
     );
     game.party(msg);
   }
+
+  //coding game
+  if (msg.content.startsWith("-code")) {
+    try {
+      var input = msg.content.split(" ");
+      var language;
+      if (input[1] == "c".toLowerCase()) {
+        language = "c";
+      }
+      else if (input[1] == "python".toLowerCase()) {
+        language = "python3";
+      }
+
+      var newInput = input.slice(1);
+      var finalInput = newInput.slice(1).join(" "); //nothing left
+
+      var code = "";
+      for (var i=0; i<finalInput.length;i++)
+        code += finalInput[i];      
+      
+      var program = {
+        script: code,
+        language: language,
+        versionIndex: "0",
+        clientId: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+      };
+      request({
+        url: 'https://api.jdoodle.com/execute',
+        method: "POST",
+        json: program
+      },
+      function (error, response, body) {
+          console.log('error:', error);
+          console.log('statusCode:', response && response.statusCode);
+          //console.log('body:', body.output);
+          const msgStyle = new Discord.MessageEmbed()
+              .setColor("RANDOM")
+              .setTitle("Input: " + code)
+              .setDescription("Output: " + body.output);
+            msg.reply({ embeds: [msgStyle] });
+      });      
+    } 
+    catch (err) {
+      msg.reply("oops wrong input");
+    } 
+  }
+
 
   //fighting game NetworkManagerEmittedEvents
   if (msg.content.startsWith("-fight")) {

@@ -28,5 +28,7 @@ var helpMsg =
   "**Clicking Game:**\n" +
   'Type "-click" first person to click the emoji wins!\n' +
   "**Want to fight someone? - Under Progress:**\n" +
-  'Type "-fight" followed by the perosn you want fight!\n';
+  'Type "-fight" followed by the perosn you want fight!\n' +
+  "**WANT TO CODE? - (C OR PYTHON FOR NOW):**\n" +
+  'Type "-code c/python " MAKE SURE TO HAVE SPACE AFTER YOUR LANGUAGE AND THEN PRESS SHIFT+ENTER TO START CODING!\n';
 exports.helpMsg = helpMsg;

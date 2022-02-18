@@ -19,6 +19,7 @@
     "klaymon": "^3.3.1",
     "nerdamer": "^1.1.13",
     "nodemon": "^2.0.15",
-    "puppeteer": "^13.1.2"
+    "puppeteer": "^13.1.2",
+    "request": "^2.88.2"
   }
 }
