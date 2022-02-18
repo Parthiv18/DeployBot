@@ -30,5 +30,5 @@ var helpMsg =
   "**Want to fight someone? - Under Progress:**\n" +
   'Type "-fight" followed by the perosn you want fight!\n' +
   "**WANT TO CODE? - (C OR PYTHON FOR NOW):**\n" +
-  'Type "-code c/python " [FORMAT (` THREE TIMES AT START OF CODE AND END OF CODE `) ```format```], [dont add scanf here]!\n';
+  'Type "-code c/python " [FORMAT (` THREE TIMES AT START OF CODE AND END OF CODE `) ```format```], [MAKE SURE TO ADD SPACE AFTER YOUR PROGRAMMING LANGUAGE], [dont add scanf here]!\n';
 exports.helpMsg = helpMsg;
