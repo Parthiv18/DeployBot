@@ -182,19 +182,20 @@ module.exports = async function (msg) {
       }
 
       var newInput = input.slice(1);      
-      var finalInput = " " + newInput.slice(1).join(" "); //nothing left
+      var finalInput = newInput.slice(1).join(" "); //nothing left
 
-      var code = "";
+      /*var code = "";
       for (var i=0; i<finalInput.length;i++) {
         code += finalInput[i];
         if (finalInput[i] == "scanf") {
           msg.reply("PLEASE NO SCANF HERE")
-        }
-        //console.log(finalInput[i]);
-      }
+        }        //console.log(finalInput[i]);
+      }*/
+      var baseInput = finalInput.split("```");
+
         
       var program = {
-        script: code,
+        script: baseInput[1],
         language: language,
         versionIndex: "0",
         clientId: process.env.CLIENT_ID,
@@ -211,7 +212,7 @@ module.exports = async function (msg) {
           //console.log('body:', body.output);
           const msgStyle = new Discord.MessageEmbed()
               .setColor("RANDOM")
-              .setDescription("Output (dont add scanf here/**add space after your coding language**): \n" + body.output);
+              .setDescription("Output **(-help for more info)**: \n" + body.output);
             msg.reply({ embeds: [msgStyle] });
       });      
     } 
