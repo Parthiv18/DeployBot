@@ -62,13 +62,19 @@ module.exports = async function (msg) {
   if (!msg.author.bot) {
     let lastMessages = await msg.channel.messages.fetch({ limit: 1 });
     let previousMessage = lastMessages.last();
-    for (var i = 0; i < 180; i++) {
+    for (var i = 0; i < 1; i++) {
       await wait(10000);
     }
     let lastMessages1 = await msg.channel.messages.fetch({ limit: 1 });
     let previousMessage1 = lastMessages1.last();
     if (previousMessage == previousMessage1) {
-      msg.reply("bro got left on seen LOL");
+      const msgStyle = new Discord.MessageEmbed()
+        .setColor("RANDOM")
+        .setTitle("bro got left on seen LOL")
+        .setAuthor({ name: "" })
+        .setImage("https://i.ytimg.com/vi/hS9qEg42Y0g/mqdefault.jpg")
+        .setTimestamp();
+      msg.channel.send({ embeds: [msgStyle] });
     }
   }
 };
