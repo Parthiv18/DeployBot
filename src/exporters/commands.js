@@ -59,7 +59,7 @@ module.exports = async function (msg) {
   }
 
   //sending reply
-  if (!msg.author.bot) {
+  /*if (!msg.author.bot) {
     let lastMessages = await msg.channel.messages.fetch({ limit: 1 });
     let previousMessage = lastMessages.last();
     for (var i = 0; i < 180; i++) {
@@ -70,5 +70,5 @@ module.exports = async function (msg) {
     if (previousMessage == previousMessage1) {
       msg.reply("bro got left on seen LOL");
     }
-  }
+  }*/
 };
