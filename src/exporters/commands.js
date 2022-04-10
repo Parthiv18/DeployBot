@@ -68,13 +68,13 @@ module.exports = async function (msg) {
     let lastMessages1 = await msg.channel.messages.fetch({ limit: 1 });
     let previousMessage1 = lastMessages1.last();
     if (previousMessage == previousMessage1) {
-      const msgStyle = new Discord.MessageEmbed()
+      const msgStyle = new Discord.MessageEmbed() 
         .setColor("RANDOM")
         .setTitle("bro got left on seen LOL")
         .setAuthor({ name: "" })
         .setImage("https://i.ytimg.com/vi/hS9qEg42Y0g/mqdefault.jpg")
         .setTimestamp();
-      msg.channel.send({ embeds: [msgStyle] });
+      msg.reply({ embeds: [msgStyle] });
     }
   }
 };
