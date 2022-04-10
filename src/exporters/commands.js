@@ -76,5 +76,5 @@ module.exports = async function (msg) {
         .setTimestamp();
       msg.reply({ embeds: [msgStyle] });
     }
-  }*./
+  }*/
 };
