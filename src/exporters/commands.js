@@ -62,7 +62,7 @@ module.exports = async function (msg) {
   if (!msg.author.bot) {
     let lastMessages = await msg.channel.messages.fetch({ limit: 1 });
     let previousMessage = lastMessages.last();
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 180; i++) {
       await wait(10000);
     }
     let lastMessages1 = await msg.channel.messages.fetch({ limit: 1 });
