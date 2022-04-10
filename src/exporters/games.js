@@ -6,6 +6,7 @@ const components = require("../helper/msgHelper");
 const click = require("discord-clicking-game");
 require("dotenv").config();
 const request = require('request');
+const akinator = require("discord.js-akinator");
 
 
 module.exports = async function (msg) {
@@ -180,20 +181,22 @@ module.exports = async function (msg) {
       else if (input[1] == "python".toLowerCase()) {
         language = "python3";
       }
+      else if (input[1] == "java".toLowerCase()) {
+        language = "java";
+      }
 
       var newInput = input.slice(1);      
       var finalInput = newInput.slice(1).join(" "); //nothing left
-
+      
       /*var code = "";
       for (var i=0; i<finalInput.length;i++) {
         code += finalInput[i];
         if (finalInput[i] == "scanf") {
           msg.reply("PLEASE NO SCANF HERE")
         }        //console.log(finalInput[i]);
+      
       }*/
-      var baseInput = finalInput.split("```");
-
-        
+      var baseInput = finalInput.split("```");        
       var program = {
         script: baseInput[1],
         language: language,
@@ -363,5 +366,15 @@ module.exports = async function (msg) {
     });
   }
 
+  //akinator 
+  /*if (msg.content.startsWith("-ak")) {
+    akinator(msg, {
+      language: "en", //Defaults to "en"
+      childMode: false, //Defaults to "false"
+      gameType: "character", //Defaults to "character"
+      useButtons: true, //Defaults to "false"
+      embedColor: "#1F1E33" //Defaults to "RANDOM"
+    });
+  }*/
   //Other
 };

@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const task = require("../helper/web");
 const components = require("../helper/msgHelper");
+const wait = require("util").promisify(setTimeout);
 
 module.exports = async function (msg) {
   if (msg.content.toUpperCase() === "Hello DeployBot".toUpperCase()) {
@@ -55,5 +56,19 @@ module.exports = async function (msg) {
     var fullName = animeCharName.slice(1).join("+");
 
     task.animeBackground(fullName).then((x) => msg.reply(x));
+  }
+
+  //sending reply
+  if (!msg.author.bot) {
+    let lastMessages = await msg.channel.messages.fetch({ limit: 1 });
+    let previousMessage = lastMessages.last();
+    for (var i = 0; i < 180; i++) {
+      await wait(10000);
+    }
+    let lastMessages1 = await msg.channel.messages.fetch({ limit: 1 });
+    let previousMessage1 = lastMessages1.last();
+    if (previousMessage == previousMessage1) {
+      msg.reply("bro got left on seen LOL");
+    }
   }
 };
