@@ -6,7 +6,7 @@ const components = require("../helper/msgHelper");
 const click = require("discord-clicking-game");
 require("dotenv").config();
 const request = require("request");
-//const akinator = require("discord.js-akinator"); //test
+//const akinator = require("discord.js-akinator");
 
 module.exports = async function (msg) {
   //New 8ball
@@ -19,7 +19,7 @@ module.exports = async function (msg) {
         .addField("8ball Reply: ", components.ballReplies[num], true);
       msg.channel.send({ embeds: [msgStyle] });
     } else if (ball.length <= 1) {
-      msg.reply("Yes or no question");
+      msg.reply("Yes or no questions");
     }
   }
   //Who am I - Anime
