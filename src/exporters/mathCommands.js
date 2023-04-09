@@ -3,7 +3,7 @@ const nerdamer = require("nerdamer/all.min");
 const task = require("../helper/web");
 
 module.exports = async function (msg) {
-  //Derive
+  //Derive function
   if (msg.content.startsWith("-derive")) {
     var inputText = msg.content.split(" ");
     //test is gone
