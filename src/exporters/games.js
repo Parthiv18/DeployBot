@@ -6,7 +6,7 @@ const components = require("../helper/msgHelper");
 const click = require("discord-clicking-game");
 require("dotenv").config();
 const request = require("request");
-//const akinator = require("discord.js-akinator");
+//const akinator = require("discord.js-akinator"); //test
 
 module.exports = async function (msg) {
   //New 8ball
