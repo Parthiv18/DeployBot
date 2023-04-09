@@ -19,7 +19,7 @@ module.exports = async function (msg) {
         .addField("8ball Reply: ", components.ballReplies[num], true);
       msg.channel.send({ embeds: [msgStyle] });
     } else if (ball.length <= 1) {
-      msg.reply("Yes or no questions");
+      msg.reply("Yes or no question");
     }
   }
   //Who am I - Anime
